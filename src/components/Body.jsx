@@ -3,14 +3,14 @@ import NewArrivals from "./bodyComponents/NewArrivals";
 import Featured from "./bodyComponents/Featured";
 import Blog from "./bodyComponents/Blog";
 import Newsletter from "./bodyComponents/Newsletter";
-import SofaCollection from "./bodyComponents/SofaCollection";
+// import SofaCollection from "./bodyComponents/SofaCollection";
 
 export default function Body() {
   return (
     <>
       <PopularProducts />
       <NewArrivals />
-      <SofaCollection />
+      {/* <SofaCollection /> */}
       <Featured />
       <Blog />
       <Newsletter />

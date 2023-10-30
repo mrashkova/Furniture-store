@@ -1,4 +1,4 @@
-export default function SofaCollections() {
+export default function SofaCollection() {
   return (
     <section id="sofa-collection">
       <div className="owl-carousel owl-theme" id="collection-carousel">
@@ -19,7 +19,7 @@ export default function SofaCollections() {
               </div>
               <button
                 className="btn-cart welcome-add-cart sofa-collection-btn"
-                // onClick="window.location.href='#'"
+                // onclick="window.location.href='#'"
               >
                 view more
               </button>
@@ -43,7 +43,7 @@ export default function SofaCollections() {
               </div>
               <button
                 className="btn-cart welcome-add-cart sofa-collection-btn"
-                // onClick="window.location.href='#'"
+                // onclick="window.location.href='#'"
               >
                 view more
               </button>
