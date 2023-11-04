@@ -19,12 +19,12 @@ The documentation below assumes you are pre-pending the Base URL to the endpoint
 
 # Endpoints: Todos
 
-- `/todos` -- get todo list/ create todo;
-- `/todos/{todoId}` -- get todo/update todo/ delete todo by provided id;;
+- `/furniture` -- get todo list/ create todo;
+- `/furniture/{todoId}` -- get todo/update todo/ delete todo by provided id;;
 
 ## Get todo list
 
-Send a `GET` request to `/todos`. The service will respond with an array of todo objects.
+Send a `GET` request to `/furniture`. The service will respond with an array of todo objects.
 
 ### Success Response:
 
@@ -44,7 +44,7 @@ Content:
 
 ## Create a new todo
 
-Create a new todo by sending a `POST` request to `/todos` with properties `text` and `isCompleted`. The service will respond with an object, containing newly created todo.
+Create a new todo by sending a `POST` request to `/furniture` with properties `text` and `isCompleted`. The service will respond with an object, containing newly created todo.
 
 ### Body
 
@@ -71,7 +71,7 @@ Content:
 
 ## Update todo by provided todoId
 
-Update an existing todo by sending a `PUT` request to `/todos/{todoId}` with property `isCompleted`. The service will respond with an object, containing newly updated todo.
+Update an existing todo by sending a `PUT` request to `/furniture/{todoId}` with property `isCompleted`. The service will respond with an object, containing newly updated todo.
 
 ### Body
 
@@ -94,4 +94,3 @@ Content:
   "isCompleted": boolean,
 }
 ```
-

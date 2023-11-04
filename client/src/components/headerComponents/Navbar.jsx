@@ -3,7 +3,7 @@ export default function Navbar() {
     <div className="top-area">
       <div className="header-area">
         <nav
-          className="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+          className="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy"
           data-minus-value-desktop="70"
           data-minus-value-mobile="55"
           data-speed="1000"
@@ -152,14 +152,14 @@ export default function Navbar() {
                 data-in="fadeInDown"
                 data-out="fadeOutUp"
               >
-                <li className=" scroll active">
+                <li className="scroll active">
                   <a href="#home">home</a>
                 </li>
                 <li className="scroll">
-                  <a href="#new-arrivals">new arrival</a>
+                  <a href="#allProducts">Products</a>
                 </li>
                 <li className="scroll">
-                  <a href="#feature">features</a>
+                  <a href="#new-arrivals">new arrival</a>
                 </li>
                 <li className="scroll">
                   <a href="#blog">blog</a>
