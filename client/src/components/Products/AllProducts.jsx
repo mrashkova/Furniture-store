@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 
 import * as productService from "../../services/productService";
 
-import ProductItem from "./ProductItem";
-import CreateProductModal from "./CRUD/CreateProductModal";
-import ProductDetailsModal from "./CRUD/ProductDetailsModal";
-import ProductDeleteModal from "./CRUD/ProductDeleteModal";
+import ProductItem from "../bodyComponents/ProductItem";
+import CreateProductModal from "../bodyComponents/CRUD/CreateProductModal";
+import ProductDetailsModal from "../bodyComponents/CRUD/ProductDetailsModal";
+import ProductDeleteModal from "../bodyComponents/CRUD/ProductDeleteModal";
 
-const Products = () => {
+const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [showCreate, setShowCreate] = useState(false);
   const [showInfo, setShowInfo] = useState(false);
@@ -109,4 +109,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default AllProducts;
