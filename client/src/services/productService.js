@@ -1,7 +1,38 @@
 const baseUrl = "http://localhost:3030/jsonstore/furniture";
 
-export const getAll = async () => {
-  const response = await fetch(baseUrl);
+export const getAllProducts = async () => {
+  try {
+    const response = await fetch(`${baseUrl}/`);
+    const result = await response.json();
+
+    const data = Object.values(result.sofas)
+      .concat(Object.values(result.tables))
+      .concat(Object.values(result.chairs));
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const getAllSofas = async () => {
+  const response = await fetch(`${baseUrl}/sofas`);
+  const result = await response.json();
+  const data = Object.values(result);
+
+  return data;
+};
+
+export const getAllTables = async () => {
+  const response = await fetch(`${baseUrl}/tables`);
+  const result = await response.json();
+  const data = Object.values(result);
+
+  return data;
+};
+
+export const getAllChairs = async () => {
+  const response = await fetch(`${baseUrl}/chairs`);
   const result = await response.json();
   const data = Object.values(result);
 

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 import * as productService from "../../services/productService";
 
-import ProductItem from "../bodyComponents/ProductItem";
-import CreateProductModal from "../bodyComponents/CRUD/CreateProductModal";
-import ProductDetailsModal from "../bodyComponents/CRUD/ProductDetailsModal";
-import ProductDeleteModal from "../bodyComponents/CRUD/ProductDeleteModal";
+import ProductItem from "./ProductItem";
+import CreateProductModal from "./CRUD/CreateProductModal";
+import ProductDetailsModal from "./CRUD/ProductDetailsModal";
+import ProductDeleteModal from "./CRUD/ProductDeleteModal";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -16,7 +16,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     productService
-      .getAll()
+      .getAllProducts()
       .then((result) => setProducts(result))
       .catch((err) => console.log(err));
   }, []);
