@@ -41,6 +41,9 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/blog">
               Blog
             </Nav.Link>
+            <Nav.Link as={Link} to="/create">
+              Add new product
+            </Nav.Link>
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>
