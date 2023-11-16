@@ -122,18 +122,12 @@ const CreateProduct = ({ createRef }) => {
             ref={nameInputRef}
             type="text"
             id="name"
-            defaultValue={createValues.name}
             onChange={createChangeHandler}
             onBlur={() => console.log("onBlur")}
           />
 
           <label htmlFor="category">Category: </label>
-          <input
-            type="text"
-            id="category"
-            defaultValue={createValues.category}
-            onChange={createChangeHandler}
-          />
+          <input type="text" id="category" onChange={createChangeHandler} />
 
           <label htmlFor="description">Description: </label>
           <textarea
@@ -144,18 +138,12 @@ const CreateProduct = ({ createRef }) => {
           />
 
           <label htmlFor="imageUrl">Image URL: </label>
-          <input
-            type="text"
-            id="imageUrl"
-            defaultValue={createValues.imageUrl}
-            onChange={createChangeHandler}
-          />
+          <input type="text" id="imageUrl" onChange={createChangeHandler} />
 
           <label htmlFor="price">Price: </label>
           <input
             type="number"
             id="price"
-            defaultValue={createValues.price}
             onChange={createChangeHandler}
             onBlur={priceValidator}
             className={errors.price && styles.inputError}
@@ -169,7 +157,6 @@ const CreateProduct = ({ createRef }) => {
           <input
             type="number"
             id="width"
-            defaultValue={createValues.width}
             onChange={createChangeHandler}
             onBlur={widthValidator}
             className={errors.width && styles.inputError}
@@ -182,7 +169,6 @@ const CreateProduct = ({ createRef }) => {
           <input
             type="number"
             id="depth"
-            defaultValue={createValues.depth}
             onChange={createChangeHandler}
             onBlur={depthValidator}
             className={errors.depth && styles.inputError}
@@ -195,7 +181,6 @@ const CreateProduct = ({ createRef }) => {
           <input
             type="number"
             id="height"
-            defaultValue={createValues.height}
             onChange={createChangeHandler}
             onBlur={heightValidator}
             className={errors.height && styles.inputError}

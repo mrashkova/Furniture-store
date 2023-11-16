@@ -4,26 +4,14 @@ export default function Footer() {
       <div className="container">
         <div className="hm-footer-copyright text-center">
           <div className="footer-social">
-            <a href="#">
-              <i className="fa fa-facebook"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-instagram"></i>
-            </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/mrashkova/">
               <i className="fa fa-linkedin"></i>
             </a>
-            <a href="#">
-              <i className="fa fa-pinterest"></i>
-            </a>
-            <a href="#">
-              <i className="fa fa-behance"></i>
+            <a href="https://github.com/mrashkova">
+              <i className="fa fa-github"></i>
             </a>
           </div>
-          <p>
-            &copy;copyright. designed and developed by{" "}
-            <a href="https://www.themesine.com/">themesine</a>
-          </p>
+          <p>&copy;copyright. designed and developed by Mariya Rashkova </p>
         </div>
       </div>
 
