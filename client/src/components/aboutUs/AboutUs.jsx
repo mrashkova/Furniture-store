@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import styles from "./Contact.module.css";
+import styles from "./AboutUs.module.css";
 
 const formInitialState = {
   username: "",
@@ -9,7 +9,7 @@ const formInitialState = {
   message: "",
 };
 
-const Contact = ({ formRef }) => {
+const AboutUs = ({ formRef }) => {
   const usernameInputRef = useRef();
 
   const [usernameValue, setUsernameValue] = useState("");
@@ -129,4 +129,4 @@ const Contact = ({ formRef }) => {
   );
 };
 
-export default Contact;
+export default AboutUs;

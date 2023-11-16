@@ -1,4 +1,3 @@
-import Carousel from "./headerComponents/Carousel";
 import Navbar from "./headerComponents/Navbar";
 
 export default function Header() {

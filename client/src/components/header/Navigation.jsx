@@ -17,9 +17,6 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/new-arrivals">
-              New Arrivals
-            </Nav.Link>
             <NavDropdown title="Products" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/products/all-products">
                 All products
@@ -38,14 +35,17 @@ const Navigation = () => {
                 Beds
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/blog">
-              Blog
-            </Nav.Link>
             <Nav.Link as={Link} to="/create">
               Add new product
             </Nav.Link>
+            <Nav.Link as={Link} to="/blog">
+              Blog
+            </Nav.Link>
+            <Nav.Link as={Link} to="/new-arrivals">
+              New Arrivals
+            </Nav.Link>
             <Nav.Link as={Link} to="/contact">
-              Contact
+              About Us
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 
 import * as productService from "../../services/productService";
 
-import ProductItem from "../products/ProductItem";
+import ProductItem from "../products/productItem/ProductItem";
 import CreateProduct from "../products/create/Create";
-import ProductDetailsModal from "../products/details/Details";
+import ProductDetailsModal from "../products/productItem/ProductDetails";
 import ProductDeleteModal from "../products/delete/DeleteModal";
 
 const Sofas = () => {

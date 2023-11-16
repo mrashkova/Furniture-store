@@ -1,19 +1,15 @@
+import { Link } from "react-router-dom";
+
 const ProductItem = ({
-  productId,
+  _id,
   name,
   category,
   price,
-  priceBefore,
   imageUrl,
-  onProductDetailsClick,
   onDeleteClick,
 }) => {
-  const detailsClickHandler = () => {
-    onProductDetailsClick(productId);
-  };
-
   const deleteClickHandler = () => {
-    onDeleteClick(productId);
+    onDeleteClick(_id);
   };
 
   return (
@@ -24,9 +20,8 @@ const ProductItem = ({
           <h3>{name}</h3>
           <p className="allProducts-category">{category}</p>
           <h5>{price}</h5>
-          <h5 className="price-before">{priceBefore}</h5>
         </div>
-        <button onClick={detailsClickHandler}>Details</button>
+        <Link to={`/product/${_id}`}>Details</Link>
         <button onClick={deleteClickHandler}>Delete</button>
       </div>
     </div>

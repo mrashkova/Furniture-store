@@ -6,7 +6,7 @@ import Sofas from "./components/categories/Sofas";
 import Tables from "./components/categories/Tables";
 import Chairs from "./components/categories/Chairs";
 import Beds from "./components/categories/Beds";
-import Contact from "./components/contacts/Contact";
+import AboutUs from "./components/aboutUs/AboutUs";
 import NewArrivals from "./components/NewArrivals";
 import Create from "./components/products/create/Create";
 import Blog from "./components/Blog";
@@ -26,10 +26,11 @@ function App() {
           <Route path="chairs" element={<Chairs />} />
           <Route path="beds" element={<Beds />} />
         </Route>
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/create" element={<Create />} />
         <Route path="/new-arrivals" element={<NewArrivals />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/create" element={<Create />} />
+        <Route path="/contact" element={<AboutUs />} />
+
         {/* <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} /> */}
