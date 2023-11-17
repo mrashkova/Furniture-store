@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import styles from "./ProductItem.module.css";
+
 const ProductItem = ({
   _id,
   name,
@@ -14,7 +16,7 @@ const ProductItem = ({
 
   return (
     <div className="col-sm-3">
-      <Link to={`/furniture/${_id}`}>
+      <Link to={`/furniture/${_id}`} className={styles.singleProduct}>
         <div className="single-product">
           <div className="single-product-txt text-center">
             <img src={imageUrl} alt={`${name} image`} />

@@ -1,0 +1,9 @@
+.singleProduct {
+  color: #5f5b57;
+  text-decoration: none;
+}
+
+.singleProduct:hover {
+  text-decoration: none;
+  color: #998d80;
+}

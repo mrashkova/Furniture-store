@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import * as furnitureService from "../../../services/furnitureService";
+import styles from "./ProductDetails.module.css";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -13,16 +14,19 @@ const ProductDetails = () => {
   }, [productId]);
 
   return (
-    <section id="singleProduct" className="single-product">
-      <div className="single-product">
-        <div className="single-product-txt text-center">
-          <img src={product.imageUrl} alt={product._id} />
+    <section id="singleProduct" className={styles.singleProduct}>
+      <img
+        src={product.imageUrl}
+        alt={product._id}
+        className={styles.singleProductImg}
+      />
+      <div className={styles.singleProduct}>
+        <div className={styles.singleProductText}>
           <p>{product.articleNumber}</p>
 
           <h3>{product.name}</h3>
           <p className="allProducts-category">{product.category}</p>
           <h5>{product.price}</h5>
-          <h5 className="price-before">{product.priceBefore}</h5>
           <p>{product.description}</p>
           <h5>Measurements:</h5>
           <p>Width: {product.measurements?.width} cm</p>

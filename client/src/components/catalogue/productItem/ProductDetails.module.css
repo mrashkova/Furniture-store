@@ -1,0 +1,16 @@
+.singleProduct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleProductText {
+  flex: 1;
+  text-align: left;
+  padding: 50px;
+}
+
+.singleProductImg {
+  max-width: 100%;
+  height: auto;
+}
