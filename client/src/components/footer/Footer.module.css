@@ -1,0 +1,35 @@
+.footer {
+  background: #f8f9fd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 154px;
+  text-align: center;
+}
+.footerCopyright p,
+.footerCopyright p a {
+  color: #a5adb3;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.footerSocial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerSocial a i {
+  color: #a4aaaf;
+  margin: 0 18px 24px 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  text-align: center;
+}
+.footerSocial i:hover {
+  color: #e99c2e;
+}

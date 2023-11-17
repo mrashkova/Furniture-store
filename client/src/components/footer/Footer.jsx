@@ -1,9 +1,11 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer id="footer" className="footer">
-      <div className="container">
+    <footer id="footer" className={styles.footer}>
+      <div className={styles.container}>
         <div className="hm-footer-copyright text-center">
-          <div className="footer-social">
+          <div className={styles.footerSocial}>
             <a href="https://www.linkedin.com/in/mrashkova/">
               <i className="fa fa-linkedin"></i>
             </a>

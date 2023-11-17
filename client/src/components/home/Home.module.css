@@ -1,0 +1,103 @@
+/* WelcomePage.css */
+.home {
+  height: auto;
+}
+
+.carousel {
+  height: 500px;
+}
+
+.welcomePage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.welcomeHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pageTitle {
+  font-size: 36px;
+  color: #333;
+}
+
+.subTitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.featuredProductsCarousel {
+  overflow: hidden;
+  position: relative;
+}
+
+.carouselContainer {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.productCard {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 10px;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.productName {
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.productDescription {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Carousel Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel:hover .carousel {
+  animation: scroll 10s linear infinite;
+}
+
+.carouselDots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carouselDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #bbb;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* Uncomment the following styles if you want to pause on hover */
+/*
+.carousel:hover .carousel {
+  animation-play-state: paused;
+}
+*/
