@@ -1,292 +1,288 @@
 {
-  "sofas": {
-    "7e5cdf1c-878d-4184-a0e0-893b0002ccda": {
-      "_id": "7e5cdf1c-878d-4184-a0e0-893b0002ccda",
-      "name": "KIVIK",
-      "category": "Sofa",
-      "price": "$749.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/kivik-sofa-tibbleby-beige-gray__1056144_pe848277_s5.jpg?f=xl",
-      "measurements": {
-        "width": "228",
-        "depth": "95",
-        "height": "83"
-      },
-      "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socializing and relaxation.",
-      "articleNumber": "394.405.93"
+  "7e5cdf1c-878d-4184-a0e0-893b0002ccda": {
+    "_id": "7e5cdf1c-878d-4184-a0e0-893b0002ccda",
+    "name": "KIVIK",
+    "category": "Sofa",
+    "price": "$749.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/kivik-sofa-tibbleby-beige-gray__1056144_pe848277_s5.jpg?f=xl",
+    "measurements": {
+      "width": "228",
+      "depth": "95",
+      "height": "83"
     },
-    "701df2fd-8348-4e6d-ba28-e470042c15d7": {
-      "_id": "701df2fd-8348-4e6d-ba28-e470042c15d7",
-      "name": "FINNALA",
-      "category": "Sofa",
-      "price": "$1,149.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/finnala-sofa-gunnared-beige__0514366_pe639439_s5.jpg?f=xl",
-      "measurements": {
-        "width": "241",
-        "depth": "98",
-        "height": "85"
-      },
-      "description": "FINNALA sectional sofa can grow and change with a home and the family. Choose how many seats, the look and function to create a sofa that suits you. A clean design and long-lasting comfort are included.",
-      "articleNumber": "193.190.60"
-    },
-    "bc467258-c3c1-47ab-9a13-004fb095b408": {
-      "_id": "bc467258-c3c1-47ab-9a13-004fb095b408",
-      "name": "LINANÄS",
-      "category": "Sofa",
-      "price": "$749.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/linanaes-sofa-vissle-dark-gray__1013898_pe829450_s5.jpg?f=xl",
-      "measurements": {
-        "width": "197",
-        "depth": "80.5",
-        "height": "76"
-      },
-      "description": "This cover is made from Vissle fabric in polyester, which is dope-dyed. It’s a durable material with a smooth weave and a nice two-tone effect.",
-      "articleNumber": "805.122.47"
-    },
-    "1c301890-569c-4a97-b56b-745024debaac": {
-      "_id": "1c301890-569c-4a97-b56b-745024debaac",
-      "name": "GAMMALBYN",
-      "category": "Sofa",
-      "price": "$499.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/gammalbyn-sofa-gray__0868926_pe781434_s5.jpg?f=xl",
-      "measurements": {
-        "width": "201",
-        "depth": "91",
-        "height": "72"
-      },
-      "description": "Watch movies or talk to a friend. Read a book or take a break with the family. Email or sleep. Here’s space for everything in your life. Moveable cushions make the sofa comfy for sitting on and lying down.",
-      "articleNumber": "805.508.85"
-    },
-    "0260e328-61b2-4f7e-8a59-0efffd7ebbe3": {
-      "_id": "0260e328-61b2-4f7e-8a59-0efffd7ebbe3",
-      "name": "ÄPPLARYD",
-      "category": "Sofa",
-      "price": "$1,149.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/aepplaryd-sofa-lejde-gray-black__0992907_pe820325_s5.jpg?f=xl",
-      "measurements": {
-        "width": "231",
-        "depth": "93",
-        "height": "82"
-      },
-      "description": "ÄPPLARYD sofa will be your home’s comfy oasis. An eye-catcher that reflects your personality and style. Great to sit, lie down and hang out on. And with lots of space for the whole family, year after year.",
-      "articleNumber": "905.062.41"
-    },
-    "4cb1b921-5777-4034-94b8-0facda41fe59": {
-      "_id": "4cb1b921-5777-4034-94b8-0facda41fe59",
-      "name": "MORABO",
-      "category": "Sofa",
-      "price": "$1,199.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/morabo-sofa-with-chaise-gunnared-dark-gray-wood__0602368_pe680306_s5.jpg?f=xl",
-      "measurements": {
-        "width": "244",
-        "depth": "158",
-        "height": "81"
-      },
-      "description": "Warm and welcoming, neat and stylish. The supporting seat cushions, the cover’s soft finish and the tight fit gives this sofa a perfect balance between its comfort, functions and look.",
-      "articleNumber": "493.183.23"
-    }
+    "description": "Cuddle up in the comfortable KIVIK sofa. The generous size, low armrests and pocket springs with foam that adapts to the body invites you and your guests to many hours of socializing and relaxation.",
+    "articleNumber": "394.405.93"
   },
-  "tables": {
-    "a4de47ac-1473-4122-8bb9-d84787099a79": {
-      "_id": "a4de47ac-1473-4122-8bb9-d84787099a79",
-      "name": "EKEDALEN",
-      "category": "Table",
-      "price": "$239.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/ekedalen-extendable-table-dark-brown__0736963_pe740827_s5.jpg?f=xl",
-      "measurements": {
-        "width": "120",
-        "depth": "80",
-        "height": "75"
-      },
-      "description": "A durable dining table that makes it easy to have big dinners. A single person can extend the table and there’s plenty of room for chairs since the legs are always located at the corners of the table.",
-      "articleNumber": "403.408.04"
+  "701df2fd-8348-4e6d-ba28-e470042c15d7": {
+    "_id": "701df2fd-8348-4e6d-ba28-e470042c15d7",
+    "name": "FINNALA",
+    "category": "Sofa",
+    "price": "$1,149.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/finnala-sofa-gunnared-beige__0514366_pe639439_s5.jpg?f=xl",
+    "measurements": {
+      "width": "241",
+      "depth": "98",
+      "height": "85"
     },
-    "0c9c98d9-a2a4-401b-823b-863b9fb050e7": {
-      "_id": "0c9c98d9-a2a4-401b-823b-863b9fb050e7",
-      "name": "INGATORP",
-      "category": "Table",
-      "price": "$399.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/ingatorp-extendable-table-white__0737089_pe740879_s5.jpg?f=xl",
-      "measurements": {
-        "width": "110",
-        "depth": "104",
-        "height": "74"
-      },
-      "description": "Everyone faces each other around a round table and you can make room for socializing by simply adding a leaf. A traditional look with details like the turned leg gives it that little extra.",
-      "articleNumber": "402.170.69"
-    },
-    "8793cbc1-8e5f-4e06-8383-0afe19772dcb": {
-      "_id": "8793cbc1-8e5f-4e06-8383-0afe19772dcb",
-      "name": "LISABO",
-      "category": "Table",
-      "price": "$199.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-table-ash-veneer__0737105_pe740883_s5.jpg?f=xl",
-      "measurements": {
-        "width": "104",
-        "depth": "78",
-        "height": "74"
-      },
-      "description": "Beautiful in its simplicity with a warm, natural wooden look. The innovative construction is very sturdy and with just a few clicks, the table is assembled and ready for use.",
-      "articleNumber": "702.943.39"
-    },
-    "a4ea39cb-c484-40d4-ad53-b932f3b5d1de": {
-      "_id": "a4ea39cb-c484-40d4-ad53-b932f3b5d1de",
-      "name": "NORDEN",
-      "category": "Table",
-      "price": "$279.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/norden-gateleg-table-birch__66396_pe179294_s5.jpg?f=xl",
-      "measurements": {
-        "width": "152",
-        "depth": "80",
-        "height": "74"
-      },
-      "description": "Gateleg tables have been around for centuries – with the space-saving design it’s no wonder why. We gave this table a straightforward, Scandinavian look and added a few drawers for flatware and napkins.",
-      "articleNumber": "904.238.87"
-    },
-    "39d2d347-2657-4ee9-93e7-f7bbfd276b95": {
-      "_id": "39d2d347-2657-4ee9-93e7-f7bbfd276b95",
-      "name": "TARSELE",
-      "category": "Table",
-      "price": "$559.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/tarsele-extendable-table-oak-veneer-black__0916857_pe785431_s5.jpg?f=xl",
-      "measurements": {
-        "width": "200",
-        "depth": "80",
-        "height": "77"
-      },
-      "description": "This extendable dining table is a nice mix of warm oak veneer and sturdy solid metal, and is inspired by 1950s industrial design. The table top also hides an extension leaf – perfect when you have guests.",
-      "articleNumber": "104.684.22"
-    }
+    "description": "FINNALA sectional sofa can grow and change with a home and the family. Choose how many seats, the look and function to create a sofa that suits you. A clean design and long-lasting comfort are included.",
+    "articleNumber": "193.190.60"
   },
-  "chairs": {
-    "8be32dd4-d3f1-4da6-9540-fd462615fff0": {
-      "_id": "8be32dd4-d3f1-4da6-9540-fd462615fff0",
-      "name": "NOLMYRA",
-      "category": "Chair",
-      "price": "$49.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/nolmyra-chair-birch-veneer-gray__0152020_pe310348_s5.jpg?f=xl",
-      "measurements": {
-        "width": "55",
-        "depth": "75",
-        "height": "75"
-      },
-      "description": "NOLMYRA easy chair re-imagines comfort with mesh fabric stretched over the frame, making the need for foam unnecessary. The result is an elegantly engineered lounge chair at a low price.",
-      "articleNumber": "102.335.32"
+  "bc467258-c3c1-47ab-9a13-004fb095b408": {
+    "_id": "bc467258-c3c1-47ab-9a13-004fb095b408",
+    "name": "LINANÄS",
+    "category": "Sofa",
+    "price": "$749.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/linanaes-sofa-vissle-dark-gray__1013898_pe829450_s5.jpg?f=xl",
+    "measurements": {
+      "width": "197",
+      "depth": "80.5",
+      "height": "76"
     },
+    "description": "This cover is made from Vissle fabric in polyester, which is dope-dyed. It’s a durable material with a smooth weave and a nice two-tone effect.",
+    "articleNumber": "805.122.47"
+  },
+  "1c301890-569c-4a97-b56b-745024debaac": {
+    "_id": "1c301890-569c-4a97-b56b-745024debaac",
+    "name": "GAMMALBYN",
+    "category": "Sofa",
+    "price": "$499.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/gammalbyn-sofa-gray__0868926_pe781434_s5.jpg?f=xl",
+    "measurements": {
+      "width": "201",
+      "depth": "91",
+      "height": "72"
+    },
+    "description": "Watch movies or talk to a friend. Read a book or take a break with the family. Email or sleep. Here’s space for everything in your life. Moveable cushions make the sofa comfy for sitting on and lying down.",
+    "articleNumber": "805.508.85"
+  },
+  "0260e328-61b2-4f7e-8a59-0efffd7ebbe3": {
+    "_id": "0260e328-61b2-4f7e-8a59-0efffd7ebbe3",
+    "name": "ÄPPLARYD",
+    "category": "Sofa",
+    "price": "$1,149.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/aepplaryd-sofa-lejde-gray-black__0992907_pe820325_s5.jpg?f=xl",
+    "measurements": {
+      "width": "231",
+      "depth": "93",
+      "height": "82"
+    },
+    "description": "ÄPPLARYD sofa will be your home’s comfy oasis. An eye-catcher that reflects your personality and style. Great to sit, lie down and hang out on. And with lots of space for the whole family, year after year.",
+    "articleNumber": "905.062.41"
+  },
+  "4cb1b921-5777-4034-94b8-0facda41fe59": {
+    "_id": "4cb1b921-5777-4034-94b8-0facda41fe59",
+    "name": "MORABO",
+    "category": "Sofa",
+    "price": "$1,199.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/morabo-sofa-with-chaise-gunnared-dark-gray-wood__0602368_pe680306_s5.jpg?f=xl",
+    "measurements": {
+      "width": "244",
+      "depth": "158",
+      "height": "81"
+    },
+    "description": "Warm and welcoming, neat and stylish. The supporting seat cushions, the cover’s soft finish and the tight fit gives this sofa a perfect balance between its comfort, functions and look.",
+    "articleNumber": "493.183.23"
+  },
 
-    "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618": {
-      "_id": "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618",
-      "name": "POÄNG",
-      "category": "Armchair",
-      "price": "$119.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/poaeng-armchair-birch-veneer-knisa-black__0571496_pe666929_s5.jpg?f=xl",
-      "measurements": {
-        "width": "68",
-        "depth": "82",
-        "height": "100"
-      },
-      "description": "POÄNG armchair has stylish curved lines in bentwood, providing nice support for the neck and comfy resilience. It’s been in our range for several decades and is still just as popular. Want to try it too?",
-      "articleNumber": "793.059.27"
+  "a4de47ac-1473-4122-8bb9-d84787099a79": {
+    "_id": "a4de47ac-1473-4122-8bb9-d84787099a79",
+    "name": "EKEDALEN",
+    "category": "Table",
+    "price": "$239.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/ekedalen-extendable-table-dark-brown__0736963_pe740827_s5.jpg?f=xl",
+    "measurements": {
+      "width": "120",
+      "depth": "80",
+      "height": "75"
     },
+    "description": "A durable dining table that makes it easy to have big dinners. A single person can extend the table and there’s plenty of room for chairs since the legs are always located at the corners of the table.",
+    "articleNumber": "403.408.04"
+  },
+  "0c9c98d9-a2a4-401b-823b-863b9fb050e7": {
+    "_id": "0c9c98d9-a2a4-401b-823b-863b9fb050e7",
+    "name": "INGATORP",
+    "category": "Table",
+    "price": "$399.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/ingatorp-extendable-table-white__0737089_pe740879_s5.jpg?f=xl",
+    "measurements": {
+      "width": "110",
+      "depth": "104",
+      "height": "74"
+    },
+    "description": "Everyone faces each other around a round table and you can make room for socializing by simply adding a leaf. A traditional look with details like the turned leg gives it that little extra.",
+    "articleNumber": "402.170.69"
+  },
+  "8793cbc1-8e5f-4e06-8383-0afe19772dcb": {
+    "_id": "8793cbc1-8e5f-4e06-8383-0afe19772dcb",
+    "name": "LISABO",
+    "category": "Table",
+    "price": "$199.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-table-ash-veneer__0737105_pe740883_s5.jpg?f=xl",
+    "measurements": {
+      "width": "104",
+      "depth": "78",
+      "height": "74"
+    },
+    "description": "Beautiful in its simplicity with a warm, natural wooden look. The innovative construction is very sturdy and with just a few clicks, the table is assembled and ready for use.",
+    "articleNumber": "702.943.39"
+  },
+  "a4ea39cb-c484-40d4-ad53-b932f3b5d1de": {
+    "_id": "a4ea39cb-c484-40d4-ad53-b932f3b5d1de",
+    "name": "NORDEN",
+    "category": "Table",
+    "price": "$279.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/norden-gateleg-table-birch__66396_pe179294_s5.jpg?f=xl",
+    "measurements": {
+      "width": "152",
+      "depth": "80",
+      "height": "74"
+    },
+    "description": "Gateleg tables have been around for centuries – with the space-saving design it’s no wonder why. We gave this table a straightforward, Scandinavian look and added a few drawers for flatware and napkins.",
+    "articleNumber": "904.238.87"
+  },
+  "39d2d347-2657-4ee9-93e7-f7bbfd276b95": {
+    "_id": "39d2d347-2657-4ee9-93e7-f7bbfd276b95",
+    "name": "TARSELE",
+    "category": "Table",
+    "price": "$559.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/tarsele-extendable-table-oak-veneer-black__0916857_pe785431_s5.jpg?f=xl",
+    "measurements": {
+      "width": "200",
+      "depth": "80",
+      "height": "77"
+    },
+    "description": "This extendable dining table is a nice mix of warm oak veneer and sturdy solid metal, and is inspired by 1950s industrial design. The table top also hides an extension leaf – perfect when you have guests.",
+    "articleNumber": "104.684.22"
+  },
 
-    "ee5e2889-6ae4-47bf-963f-18222905fc0a": {
-      "_id": "ee5e2889-6ae4-47bf-963f-18222905fc0a",
-      "name": "LIDÅS",
-      "category": "Chair",
-      "price": "$55.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/lidas-chair-white-sefast-white__1106351_pe868690_s5.jpg?f=xl",
-      "measurements": {
-        "width": "32",
-        "depth": "50",
-        "height": "81"
-      },
-      "description": "You sit comfortably thanks to the scooped seat and restful flexibility of the backrest. The material wipes clean in an instant. Choose your favorite color for a personal look or why not mix colors?",
-      "articleNumber": "394.813.81"
+  "8be32dd4-d3f1-4da6-9540-fd462615fff0": {
+    "_id": "8be32dd4-d3f1-4da6-9540-fd462615fff0",
+    "name": "NOLMYRA",
+    "category": "Chair",
+    "price": "$49.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/nolmyra-chair-birch-veneer-gray__0152020_pe310348_s5.jpg?f=xl",
+    "measurements": {
+      "width": "55",
+      "depth": "75",
+      "height": "75"
     },
+    "description": "NOLMYRA easy chair re-imagines comfort with mesh fabric stretched over the frame, making the need for foam unnecessary. The result is an elegantly engineered lounge chair at a low price.",
+    "articleNumber": "102.335.32"
+  },
 
-    "ca97a76e-e632-42c2-b003-3bbeccf9ec65": {
-      "_id": "ca97a76e-e632-42c2-b003-3bbeccf9ec65",
-      "name": "STEFAN",
-      "category": "Chair",
-      "price": "$35.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/stefan-chair-brown-black__0727320_pe735593_s5.jpg?f=xl",
-      "measurements": {
-        "width": "33",
-        "depth": "49",
-        "height": "90"
-      },
-      "description": "A sturdy chair with a solid wood construction that can handle the challenges of everyday life! Combines nicely with most styles, and if you’re looking for extra comfort, simply add a chair pad.",
-      "articleNumber": "002.110.88"
+  "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618": {
+    "_id": "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618",
+    "name": "POÄNG",
+    "category": "Chair",
+    "price": "$119.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/poaeng-armchair-birch-veneer-knisa-black__0571496_pe666929_s5.jpg?f=xl",
+    "measurements": {
+      "width": "68",
+      "depth": "82",
+      "height": "100"
     },
+    "description": "POÄNG armchair has stylish curved lines in bentwood, providing nice support for the neck and comfy resilience. It’s been in our range for several decades and is still just as popular. Want to try it too?",
+    "articleNumber": "793.059.27"
+  },
 
-    "a906e90c-1dc0-4bb3-8394-a440c31e3b34": {
-      "_id": "a906e90c-1dc0-4bb3-8394-a440c31e3b34",
-      "name": "KRYLBO",
-      "category": "Chair",
-      "price": "$90.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/krylbo-chair-tonerud-dark-beige__1208495_pe908606_s5.jpg?f=xl",
-      "measurements": {
-        "width": "55",
-        "depth": "51",
-        "height": "75"
-      },
-      "description": "On this sturdy upholstered chair with soft padding and nice lumbar support, you sit comfy while working, doing crafts or enjoying a tasty dinner. Comes in 2 colors, just like the matching swivel chair.",
-      "articleNumber": "205.667.52"
+  "ee5e2889-6ae4-47bf-963f-18222905fc0a": {
+    "_id": "ee5e2889-6ae4-47bf-963f-18222905fc0a",
+    "name": "LIDÅS",
+    "category": "Chair",
+    "price": "$55.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/lidas-chair-white-sefast-white__1106351_pe868690_s5.jpg?f=xl",
+    "measurements": {
+      "width": "32",
+      "depth": "50",
+      "height": "81"
     },
-    "e708abf0-8d62-45b5-b852-c64602335ba7": {
-      "_id": "e708abf0-8d62-45b5-b852-c64602335ba7",
-      "name": "LISABO",
-      "category": "Chair",
-      "price": "$85.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-chair-ash__0786549_pe763015_s5.jpg?f=xl",
-      "measurements": {
-        "width": "43",
-        "depth": "51",
-        "height": "80"
-      },
-      "description": "A hand-crafted expression that is both comfy and sturdy to suit even the liveliest family members. Ideal for all the activities around the table like eating, playing games, drawing and homework.",
-      "articleNumber": "004.572.35"
+    "description": "You sit comfortably thanks to the scooped seat and restful flexibility of the backrest. The material wipes clean in an instant. Choose your favorite color for a personal look or why not mix colors?",
+    "articleNumber": "394.813.81"
+  },
+
+  "ca97a76e-e632-42c2-b003-3bbeccf9ec65": {
+    "_id": "ca97a76e-e632-42c2-b003-3bbeccf9ec65",
+    "name": "STEFAN",
+    "category": "Chair",
+    "price": "$35.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/stefan-chair-brown-black__0727320_pe735593_s5.jpg?f=xl",
+    "measurements": {
+      "width": "33",
+      "depth": "49",
+      "height": "90"
     },
-    "a7ae892e-7d67-4b49-b62f-b2cbc96add92": {
-      "_id": "a7ae892e-7d67-4b49-b62f-b2cbc96add92",
-      "name": "LINNEBÄCK",
-      "category": "Chair",
-      "price": "$69.99",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/linnebaeck-chair-orrsta-olive-green__0933454_pe791910_s5.jpg?f=xl",
-      "measurements": {
-        "width": "55",
-        "depth": "70",
-        "height": "72"
-      },
-      "description": "Beautiful simplicity and a casual style. This flexible, versatile easy chair with an airy design adds a visual calmness to the room, while supporting both an active and a relaxed life at home.",
-      "articleNumber": "104.872.32"
+    "description": "A sturdy chair with a solid wood construction that can handle the challenges of everyday life! Combines nicely with most styles, and if you’re looking for extra comfort, simply add a chair pad.",
+    "articleNumber": "002.110.88"
+  },
+
+  "a906e90c-1dc0-4bb3-8394-a440c31e3b34": {
+    "_id": "a906e90c-1dc0-4bb3-8394-a440c31e3b34",
+    "name": "KRYLBO",
+    "category": "Chair",
+    "price": "$90.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/krylbo-chair-tonerud-dark-beige__1208495_pe908606_s5.jpg?f=xl",
+    "measurements": {
+      "width": "55",
+      "depth": "51",
+      "height": "75"
     },
-    "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a": {
-      "_id": "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a",
-      "name": "PERSBOL",
-      "category": "Armchair",
-      "price": "$85.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/persbol-armchair-black-tibbleby-beige-gray__1123955_pe874932_s5.jpg?f=xl",
-      "measurements": {
-        "width": "57",
-        "depth": "69",
-        "height": "84"
-      },
-      "description": "A crafted feel and timeless design. PERSBOL spindle armchair fits wherever you want to create nooks to spend time with family or enjoy some nice me-time. A classic that only gets more beautiful with time.",
-      "articleNumber": "805.259.14"
+    "description": "On this sturdy upholstered chair with soft padding and nice lumbar support, you sit comfy while working, doing crafts or enjoying a tasty dinner. Comes in 2 colors, just like the matching swivel chair.",
+    "articleNumber": "205.667.52"
+  },
+  "e708abf0-8d62-45b5-b852-c64602335ba7": {
+    "_id": "e708abf0-8d62-45b5-b852-c64602335ba7",
+    "name": "LISABO",
+    "category": "Chair",
+    "price": "$85.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-chair-ash__0786549_pe763015_s5.jpg?f=xl",
+    "measurements": {
+      "width": "43",
+      "depth": "51",
+      "height": "80"
     },
-    "4b9025e6-d31d-4605-883c-fc0a3f63a15f": {
-      "_id": "4b9025e6-d31d-4605-883c-fc0a3f63a15f",
-      "name": "KLINTEN",
-      "category": "Chair",
-      "price": "$115.00",
-      "imageUrl": "https://www.ikea.com/us/en/images/products/klinten-chair-brown-kilanda-light-beige__1156101_pe886899_s5.jpg?f=xl",
-      "measurements": {
-        "width": "43",
-        "depth": "60",
-        "height": "81"
-      },
-      "description": "You’ll linger longer on this fully upholstered chair with a thick-padded seat and a high, soft back. Comes in several colours – feel free to mix and create a dining area style that feels warm and inviting.",
-      "articleNumber": "605.470.40"
-    }
+    "description": "A hand-crafted expression that is both comfy and sturdy to suit even the liveliest family members. Ideal for all the activities around the table like eating, playing games, drawing and homework.",
+    "articleNumber": "004.572.35"
+  },
+  "a7ae892e-7d67-4b49-b62f-b2cbc96add92": {
+    "_id": "a7ae892e-7d67-4b49-b62f-b2cbc96add92",
+    "name": "LINNEBÄCK",
+    "category": "Chair",
+    "price": "$69.99",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/linnebaeck-chair-orrsta-olive-green__0933454_pe791910_s5.jpg?f=xl",
+    "measurements": {
+      "width": "55",
+      "depth": "70",
+      "height": "72"
+    },
+    "description": "Beautiful simplicity and a casual style. This flexible, versatile easy chair with an airy design adds a visual calmness to the room, while supporting both an active and a relaxed life at home.",
+    "articleNumber": "104.872.32"
+  },
+  "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a": {
+    "_id": "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a",
+    "name": "PERSBOL",
+    "category": "Chair",
+    "price": "$85.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/persbol-armchair-black-tibbleby-beige-gray__1123955_pe874932_s5.jpg?f=xl",
+    "measurements": {
+      "width": "57",
+      "depth": "69",
+      "height": "84"
+    },
+    "description": "A crafted feel and timeless design. PERSBOL spindle armchair fits wherever you want to create nooks to spend time with family or enjoy some nice me-time. A classic that only gets more beautiful with time.",
+    "articleNumber": "805.259.14"
+  },
+  "4b9025e6-d31d-4605-883c-fc0a3f63a15f": {
+    "_id": "4b9025e6-d31d-4605-883c-fc0a3f63a15f",
+    "name": "KLINTEN",
+    "category": "Chair",
+    "price": "$115.00",
+    "imageUrl": "https://www.ikea.com/us/en/images/products/klinten-chair-brown-kilanda-light-beige__1156101_pe886899_s5.jpg?f=xl",
+    "measurements": {
+      "width": "43",
+      "depth": "60",
+      "height": "81"
+    },
+    "description": "You’ll linger longer on this fully upholstered chair with a thick-padded seat and a high, soft back. Comes in several colours – feel free to mix and create a dining area style that feels warm and inviting.",
+    "articleNumber": "605.470.40"
   }
 }

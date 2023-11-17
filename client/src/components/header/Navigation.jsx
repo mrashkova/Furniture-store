@@ -17,24 +17,9 @@ const Navigation = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <NavDropdown title="Products" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/products/all-products">
-                All products
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/products/sofas">
-                Sofas
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/products/tables">
-                Tables
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/products/chairs">
-                Chairs
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/products/beds">
-                Beds
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link as={Link} to="/furniture">
+              Catalogue
+            </Nav.Link>
             <Nav.Link as={Link} to="/create">
               Add new product
             </Nav.Link>

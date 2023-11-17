@@ -16,9 +16,9 @@ const request = async (method, url, data) => {
     ...buildOptions(data),
   });
 
-  // if(!response.ok) {
-  //     throw new Error
-  // }
+  if (!response.ok) {
+    throw new Error();
+  }
 
   const result = await response.json();
   return result;

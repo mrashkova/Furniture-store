@@ -1,0 +1,8 @@
+.noProducts {
+  height: 200px; /* Set your desired height */
+  text-align: center;
+  line-height: 200px; /* Should be equal to the height to vertically center content */
+  margin: auto; /* Center horizontally */
+  left: 0;
+  right: 0;
+}
