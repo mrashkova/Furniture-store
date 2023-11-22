@@ -36,25 +36,25 @@ const Navigation = () => {
               About Us
             </Nav.Link>
             {isAuthenticated && (
-              <div id="user">
+              <>
                 <Nav.Link as={Link} to={Path.Create}>
                   Add new product
                 </Nav.Link>
                 <Nav.Link as={Link} to={Path.Logout}>
                   Logout
                 </Nav.Link>
-              </div>
+              </>
             )}
 
             {!isAuthenticated && (
-              <div id="guest">
+              <>
                 <Nav.Link as={Link} to={Path.Login}>
                   Login
                 </Nav.Link>
                 <Nav.Link as={Link} to={Path.Register}>
                   Register
                 </Nav.Link>
-              </div>
+              </>
             )}
           </Nav>
         </Navbar.Collapse>
