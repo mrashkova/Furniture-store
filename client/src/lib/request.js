@@ -7,6 +7,16 @@ const buildOptions = (data) => {
       "content-type": "application-json",
     };
   }
+
+  const token = localStorage.getItem("accessToken");
+
+  if (token) {
+    options.headers = {
+      ...options.headers,
+      "X-Authorization": token,
+    };
+  }
+
   return options;
 };
 
@@ -16,11 +26,16 @@ const request = async (method, url, data) => {
     ...buildOptions(data),
   });
 
-  if (!response.ok) {
-    throw new Error();
+  if (response.status === 204) {
+    return {};
   }
 
   const result = await response.json();
+
+  if (!response.ok) {
+    throw result;
+  }
+
   return result;
 };
 
