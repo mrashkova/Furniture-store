@@ -12,7 +12,6 @@ import ProductDetails from "./components/catalogue/productItem/ProductDetails";
 import AboutUs from "./components/aboutUs/AboutUs";
 import NewArrivals from "./components/NewArrivals";
 import Create from "./components/create/Create";
-import Blog from "./components/Blog";
 import Footer from "./components/footer/Footer";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
@@ -71,7 +70,6 @@ function App() {
         <Route path={Path.ProductDetails} element={<ProductDetails />} />
         <Route path={Path.Create} element={<Create />} />
         <Route path={Path.NewArrivals} element={<NewArrivals />} />
-        <Route path={Path.Blog} element={<Blog />} />
         <Route path={Path.AboutUs} element={<AboutUs />} />
         <Route path={Path.Login} element={<Login />} />
         <Route path={Path.Register} element={<Register />} />

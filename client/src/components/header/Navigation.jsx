@@ -26,9 +26,7 @@ const Navigation = () => {
             <Nav.Link as={Link} to={Path.Catalogue}>
               Catalogue
             </Nav.Link>
-            <Nav.Link as={Link} to={Path.Blog}>
-              Blog
-            </Nav.Link>
+
             <Nav.Link as={Link} to={Path.NewArrivals}>
               New Arrivals
             </Nav.Link>
