@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
 import styles from "./ProductItem.module.css";
-
+// import Path from "../../../constants/paths";
+// import pathToUrl from "../../../utils/pathUtils";
 const ProductItem = ({
   _id,
   name,

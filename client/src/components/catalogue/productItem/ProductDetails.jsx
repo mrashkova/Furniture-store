@@ -1,10 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import * as furnitureService from "../../../services/furnitureService";
 import styles from "./ProductDetails.module.css";
+import Path from "../../../constants/paths";
+import pathToUrl from "../../../utils/pathUtils";
+import AuthContext from "../../../contexts/authContext";
 
 const ProductDetails = () => {
+  const { userId } = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const { productId } = useParams();
 
@@ -34,6 +39,17 @@ const ProductDetails = () => {
           <p>Height: {product.measurements?.height} cm</p>
         </div>
       </div>
+
+      {userId === product._ownerId && (
+        <div className="buttons">
+          <Link to={pathToUrl(Path.Edit, { productId })} className="button">
+            Edit
+          </Link>
+          <Link to={pathToUrl(Path.Delete, { productId })} className="button">
+            Delete
+          </Link>
+        </div>
+      )}
     </section>
   );
 };
