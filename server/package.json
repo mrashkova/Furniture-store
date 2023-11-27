@@ -21,7 +21,9 @@
         "url": "https://github.com/softuni-practice-server/softuni-practice-server/issues"
     },
     "homepage": "https://github.com/softuni-practice-server/softuni-practice-server#readme",
-    "dependencies": {},
+    "dependencies": {
+        "react-bootstrap": "^2.9.1"
+    },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.1.0",
         "@rollup/plugin-json": "^4.1.0",

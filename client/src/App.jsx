@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import * as authService from "./services/authServices";
 import AuthContext from "./contexts/authContext";

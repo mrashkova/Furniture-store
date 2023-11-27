@@ -1,5 +1,5 @@
 import styles from "./Home.module.css";
-import HomeCarouseledit from "./HomeCarouseledit";
+import HomeCarousel from "./Carousel/HomeCarousel";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <HomeCarouseledit />
+      <HomeCarousel />
     </section>
   );
 }

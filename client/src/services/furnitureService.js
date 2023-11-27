@@ -8,6 +8,23 @@ export const getAll = async () => {
   return Object.values(result);
 };
 
+export const getTopThree = async () => {
+  try {
+    const result = await request.get(baseUrl);
+
+    // Convert the result object into an array
+    const productArray = Object.values(result);
+
+    // Take the first three elements from the array
+    const topThree = productArray.slice(0, 3);
+
+    return topThree;
+  } catch (error) {
+    console.error("Error fetching top three products:", error);
+    throw error; // Rethrow the error to propagate it
+  }
+};
+
 export const getOne = async (productId) => {
   const result = await request.get(`${baseUrl}/${productId}`);
   return result;
