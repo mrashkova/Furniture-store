@@ -4,7 +4,7 @@ const buildOptions = (data) => {
   if (data) {
     options.body = JSON.stringify(data);
     options.headers = {
-      "content-type": "application-json",
+      "content-type": "application/json",
     };
   }
 
@@ -22,8 +22,8 @@ const buildOptions = (data) => {
 
 const request = async (method, url, data) => {
   const response = await fetch(url, {
-    method,
     ...buildOptions(data),
+    method,
   });
 
   if (response.status === 204) {

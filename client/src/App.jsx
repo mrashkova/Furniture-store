@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+// import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import * as authService from "./services/authServices";
-import AuthContext from "./contexts/authContext";
+// import * as authService from "./services/authServices";
+import { AuthProvider } from "./contexts/authContext";
 import Path from "./constants/paths";
 
 import Navigation from "./components/header/Navigation";
@@ -19,50 +19,50 @@ import Register from "./components/register/Register";
 import Logout from "./components/logout/Logout";
 
 function App() {
-  const navigate = useNavigate();
-  const [auth, setAuth] = useState(() => {
-    localStorage.removeItem("accessToken");
+  // const navigate = useNavigate();
+  // const [auth, setAuth] = useState(() => {
+  //   localStorage.removeItem("accessToken");
 
-    return {};
-  });
+  //   return {};
+  // });
 
-  const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
+  // const loginSubmitHandler = async (values) => {
+  //   const result = await authService.login(values.email, values.password);
 
-    setAuth(result);
+  //   setAuth(result);
 
-    localStorage.setItem("accessToken", result.accessToken);
+  //   localStorage.setItem("accessToken", result.accessToken);
 
-    navigate(Path.Home);
-  };
+  //   navigate(Path.Home);
+  // };
 
-  const registerSubmitHandler = async (values) => {
-    const result = await authService.register(values.email, values.password);
+  // const registerSubmitHandler = async (values) => {
+  //   const result = await authService.register(values.email, values.password);
 
-    setAuth(result);
+  //   setAuth(result);
 
-    localStorage.setItem("accessToken", result.accessToken);
+  //   localStorage.setItem("accessToken", result.accessToken);
 
-    navigate(Path.Home);
-  };
+  //   navigate(Path.Home);
+  // };
 
-  const logoutHandler = () => {
-    setAuth({});
+  // const logoutHandler = () => {
+  //   setAuth({});
 
-    localStorage.removeItem("accessToken");
-  };
+  //   localStorage.removeItem("accessToken");
+  // };
 
-  const values = {
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username: auth.username || auth.email,
-    email: auth.email,
-    isAuthenticated: !!auth.accessToken,
-  };
+  // const values = {
+  //   loginSubmitHandler,
+  //   registerSubmitHandler,
+  //   logoutHandler,
+  //   username: auth.username || auth.email,
+  //   email: auth.email,
+  //   isAuthenticated: !!auth.accessToken,
+  // };
 
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
       <Navigation />
 
       <Routes>
@@ -77,7 +77,7 @@ function App() {
         <Route path={Path.Logout} element={<Logout />} />
       </Routes>
       <Footer />
-    </AuthContext.Provider>
+    </AuthProvider>
   );
 }
 
