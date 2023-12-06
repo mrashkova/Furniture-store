@@ -1,6 +1,11 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import styles from "./Login.module.css";
+
 import useForm from "../../hooks/useForm";
 import AuthContext from "../../contexts/authContext";
+import Path from "../../constants/paths";
 
 const loginFormKeys = {
   email: "email",
@@ -16,8 +21,8 @@ const Login = () => {
 
   return (
     <section id="login-page" className="auth">
-      <form id="login" onSubmit={onSubmit}>
-        <div className="container">
+      <form className={styles.form} id="login" onSubmit={onSubmit}>
+        <div className={styles.container}>
           <div className="brand-logo"></div>
           <h1>Login</h1>
           <label htmlFor="email">Email:</label>
@@ -30,20 +35,30 @@ const Login = () => {
             value={values[loginFormKeys.email]}
           />
 
-          <label htmlFor="login-pass">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
-            id="login-password"
+            id="password"
             name={loginFormKeys.password}
             onChange={onChange}
             value={values[loginFormKeys.password]}
           />
-          <input type="submit" className="btn submit" value="Login" />
-          <p className="field">
-            <span>
-              If you don't have profile click <a href="#">here</a>
-            </span>
-          </p>
+
+          <div className={styles.float}>
+            <div className={styles.floatLeft}>
+              <input type="submit" className="btn submit" value="Login" />
+            </div>
+            <div className={styles.floatRight}>
+              <p className={styles.field}>
+                <span>
+                  If you don't have profile click{" "}
+                  <Link className={styles.link} as={Link} to={Path.Register}>
+                    here
+                  </Link>
+                </span>
+              </p>
+            </div>
+          </div>
         </div>
       </form>
     </section>
