@@ -3,18 +3,12 @@
 }
 
 .container {
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  padding: 50px;
-  width: 650px;
-  position: relative;
-  width: 650px;
-  height: auto;
   border-radius: 20px;
+  background-color: #f8f9fa;
   padding: 40px;
+  width: 50%;
   box-sizing: border-box;
   margin: auto;
-  width: 50%;
   align-items: center;
 }
 
@@ -32,8 +26,7 @@ textarea[type="text"] {
 
 button[type="submit"],
 button[type="button"] {
-  justify-content: center;
-  width: 20%;
+  width: auto;
   color: white;
   padding: 14px 20px;
   margin-top: 10px;
@@ -64,27 +57,10 @@ button[type="button"]:hover {
   justify-content: space-between;
 }
 
-.width {
-  float: left;
-}
-
-.depth {
-  float: center;
-}
-
-.height {
-  float: right;
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
 .errorMessage {
   color: red;
-  font-size: 0.5em;
-  margin: 0 0 10px;
+  font-size: 0.8em;
+  margin: 10px 0;
 }
 
 .inputError {
