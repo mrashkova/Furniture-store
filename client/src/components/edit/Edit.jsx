@@ -1,20 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import useForm from "../../hooks/useForm";
 import * as furnitureService from "../../services/furnitureService";
 import styles from "./Edit.module.css";
-
-const createInitialState = {
-  name: "",
-  category: "",
-  description: "",
-  imageUrl: "",
-  price: "",
-  width: "",
-  depth: "",
-  height: "",
-};
 
 const Edit = () => {
   const navigate = useNavigate();
@@ -36,24 +24,35 @@ const Edit = () => {
     });
   }, [productId]);
 
-  const editProductSubmitHandler = async (values) => {
+  const resetCreateFormHandler = () => {
+    setCreateValues(createInitialState);
+    setErrors({});
+  };
+
+  const editProductSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const values = Object.fromEntries(new FormData(e.currentTarget));
+
     try {
       await furnitureService.edit(productId, values);
 
       navigate("/furniture");
     } catch (err) {
-      // Error notification
       console.log(err);
     }
   };
 
-  const { values, onChange, onSubmit } = useForm(
-    editProductSubmitHandler,
-    product
-  );
+  const onChange = (e) => {
+    setProduct((state) => ({
+      ...state,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <section className={styles.editPage}>
-      <form id="edit" onSubmit={onSubmit}>
+      <form id="edit" onSubmit={editProductSubmitHandler}>
         <div className={styles.container}>
           <h3>Edit Product</h3>
           <label htmlFor="name">Name: </label>
@@ -61,7 +60,8 @@ const Edit = () => {
             type="text"
             id="name"
             name="name"
-            value={values.name}
+            placeholder={"Enter product name"}
+            value={product.name}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
@@ -71,7 +71,8 @@ const Edit = () => {
             type="text"
             id="category"
             name="category"
-            value={values.category}
+            placeholder={"Enter product category"}
+            value={product.category}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
@@ -81,7 +82,8 @@ const Edit = () => {
             type="text"
             id="description"
             name="description"
-            value={values.category}
+            placeholder={"Enter product description"}
+            value={product.category}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
@@ -91,7 +93,8 @@ const Edit = () => {
             type="text"
             id="imageUrl"
             name="imageUrl"
-            value={values.category}
+            placeholder={"Enter product image URL"}
+            value={product.category}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
@@ -101,7 +104,8 @@ const Edit = () => {
             type="number"
             id="price"
             name="price"
-            value={values.category}
+            placeholder={"Enter product price"}
+            value={product.category}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
             // className={errors.price && styles.inputError}
@@ -118,7 +122,7 @@ const Edit = () => {
                 type="number"
                 id="width"
                 name="width"
-                value={values.category}
+                value={product.category}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.width && styles.inputError}
@@ -136,7 +140,7 @@ const Edit = () => {
                 type="number"
                 id="depth"
                 name="depth"
-                value={values.category}
+                value={product.category}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.depth && styles.inputError}
@@ -153,7 +157,7 @@ const Edit = () => {
                 type="number"
                 id="height"
                 name="height"
-                value={values.category}
+                value={product.category}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.height && styles.inputError}

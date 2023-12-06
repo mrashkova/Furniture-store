@@ -30,31 +30,67 @@ export const getOne = async (productId) => {
   return result;
 };
 
-export const create = async (data) => {
-  const body = {
-    name: data.name,
-    category: data.category,
-    price: data.price,
-    priceBefore: data.priceBefore,
-    imageUrl: data.imageUrl,
-    measurements: {
-      width: data.width,
-      depth: data.depth,
-      height: data.height,
-    },
-    description: data.description,
-    articleNumber: data.articleNumber,
+// export const create = async (data) => {
+//   const body = {
+//     name: data.name,
+//     category: data.category,
+//     price: data.price,
+//     priceBefore: data.priceBefore,
+//     imageUrl: data.imageUrl,
+//     measurements: {
+//       width: data.width,
+//       depth: data.depth,
+//       height: data.height,
+//     },
+//     description: data.description,
+//     articleNumber: data.articleNumber,
+//   };
+
+//   const response = await fetch(baseUrl, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(body),
+//   });
+
+//   const result = await response.json();
+//   return result;
+// };
+
+export const create = async (productData) => {
+  const result = await request.post(baseUrl, productData);
+  return result;
+};
+
+const genericValidator = (value, condition, errorMessage, setErrors) => {
+  if (condition(value)) {
+    setErrors((state) => ({
+      ...state,
+      [errorMessage.field]: errorMessage.message,
+    }));
+  } else {
+    if (setErrors && setErrors[errorMessage.field]) {
+      setErrors((state) => ({ ...state, [errorMessage.field]: "" }));
+    }
+  }
+};
+
+export const validatePositiveNumber = (value, fieldName, setErrors) => {
+  const condition = (val) => val <= 0;
+  const errorMessage = {
+    field: fieldName,
+    message: `${
+      fieldName.charAt(0).toUpperCase() + fieldName.slice(1)
+    } should be a positive number!`,
   };
 
-  const response = await fetch(baseUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
+  genericValidator(value, condition, errorMessage, setErrors);
+};
 
-  const result = await response.json();
+export const edit = async (productId, productData) => {
+  const result = await request.put(`${baseUrl}/${productId}`, productData);
+
   return result;
 };
 

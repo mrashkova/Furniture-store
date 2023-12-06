@@ -13,10 +13,16 @@ const ProductDetails = () => {
   const { userId } = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const { productId } = useParams();
+  const [showMeasurements, setShowMeasurements] = useState(true);
 
   useEffect(() => {
-    furnitureService.getOne(productId).then(setProduct);
-    // .catch((error) => console.log(error));
+    furnitureService
+      .getOne(productId)
+      .then((data) => {
+        console.log(data); // Log the product data
+        setProduct(data);
+      })
+      .catch((error) => console.log(error));
   }, [productId]);
 
   const deleteButtonClickHandler = async () => {
@@ -46,17 +52,19 @@ const ProductDetails = () => {
           <p>{product.description}</p>
 
           <h5>Measurements:</h5>
-          <div className={styles.measurements}>
-            <p className={styles.width}>
-              Width: {product.measurements?.width} cm
-            </p>
-            <p className={styles.depth}>
-              Depth: {product.measurements?.depth} cm
-            </p>
-            <p className={styles.height}>
-              Height: {product.measurements?.height} cm
-            </p>
-          </div>
+          {showMeasurements && (
+            <div className={styles.measurements}>
+              <p className={styles.width}>
+                Width: {product.measurements?.width} cm
+              </p>
+              <p className={styles.depth}>
+                Depth: {product.measurements?.depth} cm
+              </p>
+              <p className={styles.height}>
+                Height: {product.measurements?.height} cm
+              </p>
+            </div>
+          )}
 
           {userId === product._ownerId && (
             <div className={styles.buttons}>

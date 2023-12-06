@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
+import * as furnitureService from "../../services/furnitureService";
 import styles from "./Create.module.css";
 
 const createInitialState = {
@@ -14,6 +16,8 @@ const createInitialState = {
 };
 
 const CreateProduct = ({ createRef }) => {
+  const navigate = useNavigate();
+
   const nameInputRef = useRef();
   const isMountedRef = useRef(false);
   const [createValues, setCreateValues] = useState(createInitialState);
@@ -47,6 +51,50 @@ const CreateProduct = ({ createRef }) => {
       ...state,
       [e.target.name]: value,
     }));
+
+    // Immediately validate the input on change
+    validateInput(e.target.name, value);
+  };
+
+  const validateInput = (fieldName, value) => {
+    switch (fieldName) {
+      case "price":
+        furnitureService.validatePositiveNumber(value, fieldName, setErrors);
+        break;
+      case "height":
+      case "width":
+      case "depth":
+        furnitureService.validatePositiveNumber(value, fieldName, setErrors);
+        break;
+      // Add more cases for other input validations
+      default:
+        break;
+    }
+  };
+
+  const createProductHandler = async (e) => {
+    e.preventDefault();
+
+    // Validate all inputs before submitting the form
+    Object.entries(createValues).forEach(([fieldName, value]) => {
+      validateInput(fieldName, value);
+    });
+
+    // Check if there are any validation errors before submitting
+    if (Object.values(errors).some((x) => x)) {
+      console.log("Form has errors. Cannot submit.");
+      return;
+    }
+
+    const productData = Object.fromEntries(new FormData(e.currentTarget));
+
+    try {
+      await furnitureService.create(productData);
+
+      navigate("/furniture");
+    } catch (err) {
+      console.error("Error creating product:", err);
+    }
   };
 
   const resetCreateFormHandler = () => {
@@ -54,67 +102,9 @@ const CreateProduct = ({ createRef }) => {
     setErrors({});
   };
 
-  const createProductSubmitHandler = (e) => {
-    e.preventDefault();
-    console.log(createValues);
-    resetCreateFormHandler();
-  };
-
-  const priceValidator = () => {
-    if (createValues.price <= 0) {
-      setErrors((state) => ({
-        ...state,
-        price: "Price should be a positive number!",
-      }));
-    } else {
-      if (errors.price) {
-        setErrors((state) => ({ ...state, price: "" }));
-      }
-    }
-  };
-
-  const heightValidator = () => {
-    if (createValues.height <= 0) {
-      setErrors((state) => ({
-        ...state,
-        height: "Height should be a positive number!",
-      }));
-    } else {
-      if (errors.height) {
-        setErrors((state) => ({ ...state, height: "" }));
-      }
-    }
-  };
-
-  const widthValidator = () => {
-    if (createValues.width <= 0) {
-      setErrors((state) => ({
-        ...state,
-        width: "Width should be a positive number!",
-      }));
-    } else {
-      if (errors.width) {
-        setErrors((state) => ({ ...state, width: "" }));
-      }
-    }
-  };
-
-  const depthValidator = () => {
-    if (createValues.depth <= 0) {
-      setErrors((state) => ({
-        ...state,
-        depth: "Depth should be a positive number!",
-      }));
-    } else {
-      if (errors.depth) {
-        setErrors((state) => ({ ...state, depth: "" }));
-      }
-    }
-  };
-
   return (
     <section className={styles.creatPage}>
-      <form ref={createRef} id="create" onSubmit={createProductSubmitHandler}>
+      <form ref={createRef} id="create" onSubmit={createProductHandler}>
         <div className={styles.container}>
           <h3>Product Information</h3>
           <label htmlFor="name">Name: </label>
@@ -162,7 +152,13 @@ const CreateProduct = ({ createRef }) => {
             name="price"
             value={createValues.price}
             onChange={createChangeHandler}
-            onBlur={priceValidator}
+            onBlur={() =>
+              furnitureService.validatePositiveNumber(
+                createValues.price,
+                "price",
+                setErrors
+              )
+            }
             className={errors.price && styles.inputError}
           />
           {errors.price && (
@@ -179,7 +175,13 @@ const CreateProduct = ({ createRef }) => {
                 name="width"
                 value={createValues.width}
                 onChange={createChangeHandler}
-                onBlur={widthValidator}
+                onBlur={() =>
+                  furnitureService.validatePositiveNumber(
+                    createValues.width,
+                    "width",
+                    setErrors
+                  )
+                }
                 className={errors.width && styles.inputError}
               />
               {errors.width && (
@@ -195,7 +197,13 @@ const CreateProduct = ({ createRef }) => {
                 name="depth"
                 value={createValues.depth}
                 onChange={createChangeHandler}
-                onBlur={depthValidator}
+                onBlur={() =>
+                  furnitureService.validatePositiveNumber(
+                    createValues.depth,
+                    "depth",
+                    setErrors
+                  )
+                }
                 className={errors.depth && styles.inputError}
               />
               {errors.depth && (
@@ -212,7 +220,13 @@ const CreateProduct = ({ createRef }) => {
                 name="height"
                 value={createValues.height}
                 onChange={createChangeHandler}
-                onBlur={heightValidator}
+                onBlur={() =>
+                  furnitureService.validatePositiveNumber(
+                    createValues.height,
+                    "height",
+                    setErrors
+                  )
+                }
                 className={errors.height && styles.inputError}
               />
               {errors.height && (
