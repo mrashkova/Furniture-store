@@ -17,3 +17,8 @@
   width: 50%;
   align-items: center;
 }
+
+.container > p {
+  padding-top: 20px;
+  text-align: justify;
+}
