@@ -6,8 +6,6 @@ const Path = {
   Delete: "/furniture/:productId/delete",
   Logout: "/logout",
   Create: "/create",
-  Blog: "/blog",
-  NewArrivals: "/new-arrivals",
   AboutUs: "/contact",
   Login: "/login",
   Register: "/register",
