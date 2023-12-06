@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Register.module.css";
-
 import AuthContext from "../../contexts/authContext";
 import useForm from "../../hooks/useForm";
 import Path from "../../constants/paths";
