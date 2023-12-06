@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import * as furnitureService from "../../../services/furnitureService";
 import styles from "./ProductDetails.module.css";
@@ -9,6 +9,7 @@ import pathToUrl from "../../../utils/pathUtils";
 import AuthContext from "../../../contexts/authContext";
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const { userId } = useContext(AuthContext);
   const [product, setProduct] = useState({});
   const { productId } = useParams();
@@ -17,6 +18,18 @@ const ProductDetails = () => {
     furnitureService.getOne(productId).then(setProduct);
     // .catch((error) => console.log(error));
   }, [productId]);
+
+  const deleteButtonClickHandler = async () => {
+    const hasConfirmed = confirm(
+      `Are you sure you want to delete the product - ${product.name}?`
+    );
+
+    if (hasConfirmed) {
+      await furnitureService.remove(productId);
+
+      navigate("/furniture");
+    }
+  };
 
   return (
     <section id="singleProduct" className={styles.singleProduct}>
@@ -63,12 +76,13 @@ const ProductDetails = () => {
                 >
                   Edit
                 </Link>
-                <Link
+                <button
                   to={pathToUrl(Path.Delete, { productId })}
                   className={styles.delete}
+                  onClick={deleteButtonClickHandler}
                 >
                   Delete
-                </Link>
+                </button>
               </div>
             </div>
           )}

@@ -58,9 +58,5 @@ export const create = async (data) => {
   return result;
 };
 
-export const remove = async (productId) => {
-  const response = await fetch(`${baseUrl}/${productId}`, { method: "DELETE" });
-  const result = await response.json();
-
-  return result;
-};
+export const remove = async (productId) =>
+  request.remove(`${baseUrl}/${productId}`);
