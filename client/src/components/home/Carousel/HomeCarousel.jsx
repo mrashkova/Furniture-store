@@ -47,42 +47,46 @@ function HomeCarousel() {
   }, []);
 
   return (
-    <Carousel data-bs-theme="dark" className={styles.carousel}>
-      {welcomeProducts.map((welcomeProduct) => (
-        <Carousel.Item key={welcomeProduct._id}>
-          {/* <img
+    <section className={styles.carouselContainer}>
+      <Carousel data-bs-theme="dark" className={styles.carousel}>
+        {welcomeProducts.map((welcomeProduct) => (
+          <Carousel.Item key={welcomeProduct._id}>
+            {/* <img
             className="d-block w-100"
             src={welcomeProduct.imageUrl}
             alt={`${welcomeProduct.name} image`}
           /> */}
-          <img
-            className={styles.welcomeImg}
-            src={welcomeProduct.imageUrl}
-            alt={`${welcomeProduct.name} image`}
-          />
-          <Carousel.Caption className={styles.carouselCaption}>
-            <div className={styles.welcomeTxt}>
-              <h4>{welcomeProduct.name}</h4>
-              <h2>{welcomeProduct.category}</h2>
-              <p className={styles.description}>{welcomeProduct.description}</p>
-              <div>
-                <p>{welcomeProduct.price}</p>
+            <img
+              className={styles.welcomeImg}
+              src={welcomeProduct.imageUrl}
+              alt={`${welcomeProduct.name} image`}
+            />
+            <Carousel.Caption className={styles.carouselCaption}>
+              <div className={styles.welcomeTxt}>
+                <h4>{welcomeProduct.name}</h4>
+                <h2>{welcomeProduct.category}</h2>
+                <p className={styles.description}>
+                  {welcomeProduct.description}
+                </p>
+                <div>
+                  <p>{welcomeProduct.price}</p>
+                </div>
+                <button className="btn-cart welcome-add-cart">
+                  <span className="lnr lnr-plus-circle"></span>
+                  add <span>to</span> cart
+                </button>
+                <Link
+                  to={`/furniture/${welcomeProduct._id}`}
+                  className="btn-cart welcome-add-cart welcome-more-info"
+                >
+                  Details
+                </Link>
               </div>
-              <button className="btn-cart welcome-add-cart">
-                <span className="lnr lnr-plus-circle"></span>
-                add <span>to</span> cart
-              </button>
-              <Link
-                to={`/furniture/${welcomeProduct._id}`}
-                className="btn-cart welcome-add-cart welcome-more-info"
-              >
-                Details
-              </Link>
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </section>
   );
 }
 

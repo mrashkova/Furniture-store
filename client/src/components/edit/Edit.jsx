@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import useForm from "../../hooks/useForm";
 import * as furnitureService from "../../services/furnitureService";
+import styles from "./Edit.module.css";
 
 const createInitialState = {
   name: "",
@@ -51,9 +52,9 @@ const Edit = () => {
     product
   );
   return (
-    <section className="editPage">
+    <section className={styles.editPage}>
       <form id="edit" onSubmit={onSubmit}>
-        <div className="container">
+        <div className={styles.container}>
           <h3>Edit Product</h3>
           <label htmlFor="name">Name: </label>
           <input
@@ -110,52 +111,62 @@ const Edit = () => {
           )} */}
 
           <h3>Measurements</h3>
-          <label htmlFor="width">Width: </label>
-          <input
-            type="number"
-            id="width"
-            name="width"
-            value={values.category}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-            // className={errors.width && styles.inputError}
-          />
-          {/* {errors.width && (
+          <div className={styles.measurements}>
+            <div className={styles.width}>
+              <label htmlFor="width">Width: </label>
+              <input
+                type="number"
+                id="width"
+                name="width"
+                value={values.category}
+                onChange={onChange}
+                onBlur={() => console.log("onBlur")}
+                // className={errors.width && styles.inputError}
+              />
+            </div>
+
+            {/* {errors.width && (
             <p className={styles.errorMessage}>{errors.width}</p>
           )} */}
 
-          <label htmlFor="depth">Depth: </label>
-          <input
-            type="number"
-            id="depth"
-            name="depth"
-            value={values.category}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-            // className={errors.depth && styles.inputError}
-          />
-          {/* {errors.depth && (
+            <div className={styles.depth}>
+              {" "}
+              <label htmlFor="depth">Depth: </label>
+              <input
+                type="number"
+                id="depth"
+                name="depth"
+                value={values.category}
+                onChange={onChange}
+                onBlur={() => console.log("onBlur")}
+                // className={errors.depth && styles.inputError}
+              />
+            </div>
+
+            {/* {errors.depth && (
             <p className={styles.errorMessage}>{errors.depth}</p>
           )} */}
-
-          <label htmlFor="height">Height: </label>
-          <input
-            type="number"
-            id="height"
-            name="height"
-            value={values.category}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-            // className={errors.height && styles.inputError}
-          />
-        </div>
-        {/* {errors.height && (
+            <div className={styles.height}>
+              {" "}
+              <label htmlFor="height">Height: </label>
+              <input
+                type="number"
+                id="height"
+                name="height"
+                value={values.category}
+                onChange={onChange}
+                onBlur={() => console.log("onBlur")}
+                // className={errors.height && styles.inputError}
+              />
+            </div>
+          </div>
+          {/* {errors.height && (
           <p className={styles.errorMessage}>{errors.height}</p>
         )} */}
-
-        <div>
-          <button type="submit">Edit</button>
-          <button type="button">Reset</button>
+          <div>
+            <button type="submit">Edit</button>
+            <button type="button">Reset</button>
+          </div>
         </div>
       </form>
     </section>

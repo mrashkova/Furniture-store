@@ -20,36 +20,60 @@ const ProductDetails = () => {
 
   return (
     <section id="singleProduct" className={styles.singleProduct}>
-      <img
-        src={product.imageUrl}
-        alt={product._id}
-        className={styles.singleProductImg}
-      />
-      <div className={styles.singleProduct}>
-        <div className={styles.singleProductText}>
-          <p>{product.articleNumber}</p>
+      <div className={styles.container}>
+        <div className={styles.singleProductImg}>
+          <img src={product.imageUrl} alt={product._id} />
+        </div>
 
+        <div className={styles.singleProductInfo}>
+          <p>{product.articleNumber}</p>
           <h3>{product.name}</h3>
           <p className="allProducts-category">{product.category}</p>
           <h5>{product.price}</h5>
           <p>{product.description}</p>
+
           <h5>Measurements:</h5>
-          <p>Width: {product.measurements?.width} cm</p>
-          <p>Depth: {product.measurements?.depth} cm</p>
-          <p>Height: {product.measurements?.height} cm</p>
+          <div className={styles.measurements}>
+            <p className={styles.width}>
+              Width: {product.measurements?.width} cm
+            </p>
+            <p className={styles.depth}>
+              Depth: {product.measurements?.depth} cm
+            </p>
+            <p className={styles.height}>
+              Height: {product.measurements?.height} cm
+            </p>
+          </div>
+
+          {userId === product._ownerId && (
+            <div className={styles.buttons}>
+              <div className={styles.customerButton}>
+                <Link
+                  to={pathToUrl(Path.Delete, { productId })}
+                  className={styles.buy}
+                >
+                  Buy
+                </Link>
+              </div>
+
+              <div className={styles.adminButtons}>
+                <Link
+                  to={pathToUrl(Path.Edit, { productId })}
+                  className={styles.edit}
+                >
+                  Edit
+                </Link>
+                <Link
+                  to={pathToUrl(Path.Delete, { productId })}
+                  className={styles.delete}
+                >
+                  Delete
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-
-      {userId === product._ownerId && (
-        <div className="buttons">
-          <Link to={pathToUrl(Path.Edit, { productId })} className="button">
-            Edit
-          </Link>
-          <Link to={pathToUrl(Path.Delete, { productId })} className="button">
-            Delete
-          </Link>
-        </div>
-      )}
     </section>
   );
 };

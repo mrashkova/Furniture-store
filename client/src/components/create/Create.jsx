@@ -113,9 +113,9 @@ const CreateProduct = ({ createRef }) => {
   };
 
   return (
-    <section className="createPage">
+    <section className={styles.creatPage}>
       <form ref={createRef} id="create" onSubmit={createProductSubmitHandler}>
-        <div className="container">
+        <div className={styles.container}>
           <h3>Product Information</h3>
           <label htmlFor="name">Name: </label>
           <input
@@ -169,51 +169,58 @@ const CreateProduct = ({ createRef }) => {
             <p className={styles.errorMessage}>{errors.price}</p>
           )}
 
-          <h3>Measurements</h3>
-          <label htmlFor="width">Width: </label>
-          <input
-            type="number"
-            id="width"
-            name="width"
-            value={createValues.width}
-            onChange={createChangeHandler}
-            onBlur={widthValidator}
-            className={errors.width && styles.inputError}
-          />
-          {errors.width && (
-            <p className={styles.errorMessage}>{errors.width}</p>
-          )}
+          <h4>Measurements</h4>
+          <div className={styles.measurements}>
+            <div className={styles.width}>
+              <label htmlFor="width">Width: </label>
+              <input
+                type="number"
+                id="width"
+                name="width"
+                value={createValues.width}
+                onChange={createChangeHandler}
+                onBlur={widthValidator}
+                className={errors.width && styles.inputError}
+              />
+              {errors.width && (
+                <p className={styles.errorMessage}>{errors.width}</p>
+              )}
+            </div>
 
-          <label htmlFor="depth">Depth: </label>
-          <input
-            type="number"
-            id="depth"
-            name="depth"
-            value={createValues.depth}
-            onChange={createChangeHandler}
-            onBlur={depthValidator}
-            className={errors.depth && styles.inputError}
-          />
-          {errors.depth && (
-            <p className={styles.errorMessage}>{errors.depth}</p>
-          )}
+            <div className={styles.depth}>
+              <label htmlFor="depth">Depth: </label>
+              <input
+                type="number"
+                id="depth"
+                name="depth"
+                value={createValues.depth}
+                onChange={createChangeHandler}
+                onBlur={depthValidator}
+                className={errors.depth && styles.inputError}
+              />
+              {errors.depth && (
+                <p className={styles.errorMessage}>{errors.depth}</p>
+              )}
+            </div>
 
-          <label htmlFor="height">Height: </label>
-          <input
-            type="number"
-            id="height"
-            name="height"
-            value={createValues.height}
-            onChange={createChangeHandler}
-            onBlur={heightValidator}
-            className={errors.height && styles.inputError}
-          />
-        </div>
-        {errors.height && (
-          <p className={styles.errorMessage}>{errors.height}</p>
-        )}
+            <div className={styles.height}>
+              {" "}
+              <label htmlFor="height">Height: </label>
+              <input
+                type="number"
+                id="height"
+                name="height"
+                value={createValues.height}
+                onChange={createChangeHandler}
+                onBlur={heightValidator}
+                className={errors.height && styles.inputError}
+              />
+              {errors.height && (
+                <p className={styles.errorMessage}>{errors.height}</p>
+              )}
+            </div>
+          </div>
 
-        <div>
           <button type="submit" disabled={Object.values(errors).some((x) => x)}>
             Add new product
           </button>
@@ -221,6 +228,9 @@ const CreateProduct = ({ createRef }) => {
             Reset
           </button>
         </div>
+        {errors.height && (
+          <p className={styles.errorMessage}>{errors.height}</p>
+        )}
       </form>
     </section>
   );
