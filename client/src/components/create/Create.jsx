@@ -17,14 +17,13 @@ const createInitialState = {
 
 const CreateProduct = ({ createRef }) => {
   const navigate = useNavigate();
-
-  const nameInputRef = useRef();
+  const articleInputRef = useRef();
   const isMountedRef = useRef(false);
   const [createValues, setCreateValues] = useState(createInitialState);
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    nameInputRef.current.focus();
+    articleInputRef.current.focus();
   }, []);
 
   // Executes only on update
@@ -66,7 +65,6 @@ const CreateProduct = ({ createRef }) => {
       case "depth":
         furnitureService.validatePositiveNumber(value, fieldName, setErrors);
         break;
-      // Add more cases for other input validations
       default:
         break;
     }
@@ -86,10 +84,19 @@ const CreateProduct = ({ createRef }) => {
       return;
     }
 
-    const productData = Object.fromEntries(new FormData(e.currentTarget));
+    const productData = {
+      ...createValues,
+      measurements: {
+        width: createValues.width,
+        depth: createValues.depth,
+        height: createValues.height,
+      },
+    };
 
     try {
-      await furnitureService.create(productData);
+      const authToken = localStorage.getItem("authToken");
+
+      await furnitureService.create(productData, userId);
 
       navigate("/furniture");
     } catch (err) {
@@ -107,9 +114,18 @@ const CreateProduct = ({ createRef }) => {
       <form ref={createRef} id="create" onSubmit={createProductHandler}>
         <div className={styles.container}>
           <h3>Product Information</h3>
+          <label htmlFor="name">Article Number: </label>
+          <input
+            ref={articleInputRef}
+            type="number"
+            id="articleNumber"
+            name="articleNumber"
+            value={createValues.articleNumber}
+            onChange={createChangeHandler}
+            onBlur={() => console.log("onBlur")}
+          />
           <label htmlFor="name">Name: </label>
           <input
-            ref={nameInputRef}
             type="text"
             id="name"
             name="name"

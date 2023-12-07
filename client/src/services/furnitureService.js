@@ -30,38 +30,48 @@ export const getOne = async (productId) => {
   return result;
 };
 
-// export const create = async (data) => {
-//   const body = {
-//     name: data.name,
-//     category: data.category,
-//     price: data.price,
-//     priceBefore: data.priceBefore,
-//     imageUrl: data.imageUrl,
-//     measurements: {
-//       width: data.width,
-//       depth: data.depth,
-//       height: data.height,
-//     },
-//     description: data.description,
-//     articleNumber: data.articleNumber,
-//   };
+export const create = async (productData, ownerId) => {
+  const body = {
+    name: productData.name,
+    category: productData.category,
+    price: productData.price,
+    imageUrl: productData.imageUrl,
+    measurements: {
+      width: productData.width,
+      depth: productData.depth,
+      height: productData.height,
+    },
+    description: productData.description,
+    articleNumber: productData.articleNumber,
+    ownerId: ownerId, // Pass ownerId to the request body
+  };
 
-//   const response = await fetch(baseUrl, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(body),
-//   });
-
-//   const result = await response.json();
-//   return result;
-// };
-
-export const create = async (productData) => {
-  const result = await request.post(baseUrl, productData);
+  const result = await request.post(baseUrl, body);
   return result;
 };
+
+export const edit = async (productId, productData) => {
+  const body = {
+    name: productData.name,
+    category: productData.category,
+    price: productData.price,
+    imageUrl: productData.imageUrl,
+    measurements: {
+      width: productData.width,
+      depth: productData.depth,
+      height: productData.height,
+    },
+    description: productData.description,
+    articleNumber: productData.articleNumber,
+    ownerId: ownerId,
+  };
+
+  const result = await request.put(`${baseUrl}/${productId}`, body);
+  return result;
+};
+
+export const remove = async (productId) =>
+  request.remove(`${baseUrl}/${productId}`);
 
 const genericValidator = (value, condition, errorMessage, setErrors) => {
   if (condition(value)) {
@@ -87,12 +97,3 @@ export const validatePositiveNumber = (value, fieldName, setErrors) => {
 
   genericValidator(value, condition, errorMessage, setErrors);
 };
-
-export const edit = async (productId, productData) => {
-  const result = await request.put(`${baseUrl}/${productId}`, productData);
-
-  return result;
-};
-
-export const remove = async (productId) =>
-  request.remove(`${baseUrl}/${productId}`);
