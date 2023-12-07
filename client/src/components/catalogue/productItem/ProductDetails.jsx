@@ -14,17 +14,60 @@ const ProductDetails = () => {
   const [product, setProduct] = useState({});
   const { productId } = useParams();
   const [showMeasurements, setShowMeasurements] = useState(true);
+  const [isProductBought, setIsProductBought] = useState(false);
 
+  // Get products
   useEffect(() => {
     furnitureService
       .getOne(productId)
       .then((data) => {
-        console.log(data); // Log the product data
         setProduct(data);
       })
       .catch((error) => console.log(error));
   }, [productId]);
 
+  // Check if the user has already bought the product
+  useEffect(() => {
+    const checkIfProductBought = async () => {
+      try {
+        const productData = await furnitureService.getOne(productId);
+        setIsProductBought(
+          productData.buyers && productData.buyers.includes(userId)
+        );
+      } catch (error) {
+        console.error("Error checking if product is bought:", error);
+      }
+    };
+
+    // Only check if the user is logged in
+    if (userId) {
+      checkIfProductBought();
+    }
+  }, [productId, userId]);
+
+  // Buy products
+  const buyButtonClickHandler = async () => {
+    if (isProductBought) {
+      // User has already bought the product
+      return;
+    }
+
+    // Proceed with the purchase logic
+    const hasConfirmed = confirm(
+      `Are you sure you want to buy the product - ${product.name}?`
+    );
+
+    if (hasConfirmed) {
+      try {
+        await furnitureService.buy(productId, userId);
+        navigate(`/furniture`);
+      } catch (error) {
+        console.error("Error during purchase:", error);
+      }
+    }
+  };
+
+  // Delete products
   const deleteButtonClickHandler = async () => {
     const hasConfirmed = confirm(
       `Are you sure you want to delete the product - ${product.name}?`
@@ -67,16 +110,24 @@ const ProductDetails = () => {
           )}
 
           <div className={styles.buttons}>
+            {/* Conditionally render the message or buy button */}
             {userId && userId !== product._ownerId && (
               <div className={styles.customerButton}>
-                <Link
-                  to={pathToUrl(Path.Delete, { productId })}
-                  className={styles.buy}
-                >
-                  Buy
-                </Link>
+                {isProductBought ? (
+                  <p className={styles.alreadyBought}>
+                    You already bought this product!
+                  </p>
+                ) : (
+                  <button
+                    className={styles.buy}
+                    onClick={buyButtonClickHandler}
+                  >
+                    Buy
+                  </button>
+                )}
               </div>
             )}
+            {/* Owner Edit & Delete buttons */}
             {userId === product._ownerId && (
               <div className={styles.adminButtons}>
                 <Link

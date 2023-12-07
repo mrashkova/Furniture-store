@@ -149,3 +149,13 @@
 .link {
   color: black;
 }
+
+.alreadyBought {
+  color: #c25451;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px;
+  border: 1px solid #521c00;
+  padding: 8px;
+  text-align: center;
+}

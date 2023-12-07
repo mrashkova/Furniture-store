@@ -23,6 +23,18 @@ export const logout = async () => {
   await request.get(`${baseUrl}/logout`);
 };
 
+export const register = async (email, password) => {
+  const result = await request.post(`${baseUrl}/register`, {
+    email,
+    password,
+  });
+
+  // Store authentication token in localStorage
+  localStorage.setItem("authToken", result.token);
+
+  return result;
+};
+
 // Add a function to check if the user is authenticated
 export const isAuthenticated = () => {
   // Check if the authentication token is present in localStorage

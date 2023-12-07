@@ -1,82 +1,46 @@
-// import { useEffect, useState } from "react";
-// import React from "react";
-// import { Carousel } from "react-bootstrap";
-
-// import * as furnitureService from "../../../services/furnitureService";
 import styles from "./HomeCarousel.module.css";
 import { Link } from "react-router-dom";
-
-// import CarouselItem from "./CarouselItem";
-
-// function HomeCarousel() {
-//   const [welcomeProducts, setWelcomeProducts] = useState([]);
-
-//   useEffect(() => {
-//     furnitureService.getTopThree().then((result) => {
-//       setWelcomeProducts(result);
-//       console.log("Welcome products:", result);
-//     });
-//   }, []);
-
-//   return (
-//     <Carousel data-bs-theme="dark">
-//       {welcomeProducts.length > 0 ? (
-//         welcomeProducts.map((welcomeProduct) => (
-//           <CarouselItem key={welcomeProduct._id} {...welcomeProduct} />
-//         ))
-//       ) : (
-//         <p>No welcome products available.</p>
-//       )}
-//     </Carousel>
-//   );
-// }
-
-// export default HomeCarousel;
 
 import { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import * as furnitureService from "../../../services/furnitureService";
 
 function HomeCarousel() {
-  const [welcomeProducts, setWelcomeProducts] = useState([]);
+  const [mostBoughtProducts, setMostBoughtProducts] = useState([]);
 
   useEffect(() => {
-    furnitureService.getTopThree().then((result) => {
-      setWelcomeProducts(result);
+    // Fetch the top 3 most bought products
+    furnitureService.getMostBought().then((result) => {
+      setMostBoughtProducts(result);
     });
   }, []);
 
   return (
     <section className={styles.carouselContainer}>
       <Carousel data-bs-theme="dark" className={styles.carousel}>
-        {welcomeProducts.map((welcomeProduct) => (
-          <Carousel.Item key={welcomeProduct._id}>
-            {/* <img
-            className="d-block w-100"
-            src={welcomeProduct.imageUrl}
-            alt={`${welcomeProduct.name} image`}
-          /> */}
+        {mostBoughtProducts.map((mostBoughtProduct) => (
+          <Carousel.Item key={mostBoughtProduct._id}>
             <img
               className={styles.welcomeImg}
-              src={welcomeProduct.imageUrl}
-              alt={`${welcomeProduct.name} image`}
+              src={mostBoughtProduct.imageUrl}
+              alt={`${mostBoughtProduct.name} image`}
             />
             <Carousel.Caption className={styles.carouselCaption}>
               <div className={styles.welcomeTxt}>
-                <h4>{welcomeProduct.name}</h4>
-                <h2>{welcomeProduct.category}</h2>
+                <h4>{mostBoughtProduct.name}</h4>
+                <h2>{mostBoughtProduct.category}</h2>
                 <p className={styles.description}>
-                  {welcomeProduct.description}
+                  {mostBoughtProduct.description}
                 </p>
                 <div>
-                  <p>{welcomeProduct.price}</p>
+                  <p>{mostBoughtProduct.price}</p>
                 </div>
                 <button className="btn-cart welcome-add-cart">
                   <span className="lnr lnr-plus-circle"></span>
                   add <span>to</span> cart
                 </button>
                 <Link
-                  to={`/furniture/${welcomeProduct._id}`}
+                  to={`/furniture/${mostBoughtProduct._id}`}
                   className="btn-cart welcome-add-cart welcome-more-info"
                 >
                   Details

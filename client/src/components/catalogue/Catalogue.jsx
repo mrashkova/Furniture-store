@@ -4,24 +4,13 @@ import * as furnitureService from "../../services/furnitureService";
 import styles from "./Catalogue.module.css";
 
 import ProductItem from "./productItem/ProductItem";
-// import ProductDeleteModal from "../delete/DeleteModal";
 
 const Catalogue = () => {
   const [products, setProducts] = useState([]);
-  // const [showDelete, setShowDelete] = useState(false);
 
   useEffect(() => {
     furnitureService.getAll().then((result) => setProducts(result));
   }, []);
-
-  // const deleteProductHandler = async (productId) => {
-  //   const result = await furnitureService.remove(selectedProduct);
-  //   setProducts((state) =>
-  //     state.filter((product) => product._id !== selectedProduct)
-  //   );
-
-  //   setShowDelete(false);
-  // };
 
   return (
     <section id="allProducts" className="allProducts">

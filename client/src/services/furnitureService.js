@@ -1,6 +1,7 @@
 import * as request from "../lib/request";
 const baseUrl = "http://localhost:3030/jsonstore/furniture";
 
+// Get all products
 export const getAll = async () => {
   const result = await request.get(baseUrl);
   console.log(`${baseUrl}/7e5cdf1c-878d-4184-a0e0-893b0002ccda`);
@@ -8,28 +9,47 @@ export const getAll = async () => {
   return Object.values(result);
 };
 
-export const getTopThree = async () => {
-  try {
-    const result = await request.get(baseUrl);
-
-    // Convert the result object into an array
-    const productArray = Object.values(result);
-
-    // Take the first three elements from the array
-    const topThree = productArray.slice(0, 3);
-
-    return topThree;
-  } catch (error) {
-    console.error("Error fetching top three products:", error);
-    throw error; // Rethrow the error to propagate it
-  }
-};
-
+// Get one product
 export const getOne = async (productId) => {
   const result = await request.get(`${baseUrl}/${productId}`);
   return result;
 };
 
+// Most bought products
+export const getMostBought = async () => {
+  try {
+    // Fetch all products
+    const allProducts = await getAll();
+
+    // Count the number of purchases for each product
+    const productCounts = {};
+    allProducts.forEach((product) => {
+      const productId = product._id;
+      const buyersCount = product.buyers ? product.buyers.length : 0;
+      productCounts[productId] = buyersCount;
+    });
+
+    // Sort the products by the number of purchases
+    const sortedProducts = Object.keys(productCounts).sort(
+      (a, b) => productCounts[b] - productCounts[a]
+    );
+
+    // Get the top three products
+    const topThree = sortedProducts.slice(0, 3);
+
+    // Fetch details for the top three products
+    const topThreeDetails = await Promise.all(
+      topThree.map(async (productId) => await getOne(productId))
+    );
+
+    return topThreeDetails;
+  } catch (error) {
+    console.error("Error fetching most bought products:", error);
+    throw error;
+  }
+};
+
+// Create
 export const create = async (productData, _ownerId) => {
   const body = {
     name: productData.name,
@@ -50,6 +70,7 @@ export const create = async (productData, _ownerId) => {
   return result;
 };
 
+// Edit
 export const edit = async (productId, productData) => {
   const body = {
     name: productData.name,
@@ -70,9 +91,29 @@ export const edit = async (productId, productData) => {
   return result;
 };
 
+// Buy
+export const buy = async (productId, userId) => {
+  const purchaseUrl = `${baseUrl}/purchase/${productId}/${userId}`;
+  const result = await request.post(purchaseUrl);
+
+  // Retrieve the updated product after the purchase
+  const updatedProduct = await getOne(productId);
+
+  // Add the buyer's userId to the product's data
+  updatedProduct.buyers = updatedProduct.buyers || [];
+  updatedProduct.buyers.push(userId);
+
+  // Update the product with the new buyer information
+  await request.put(`${baseUrl}/${productId}`, updatedProduct);
+
+  return result;
+};
+
+// Delete
 export const remove = async (productId) =>
   request.remove(`${baseUrl}/${productId}`);
 
+// Validators for numbers <= 0
 const genericValidator = (value, condition, errorMessage, setErrors) => {
   if (condition(value)) {
     setErrors((state) => ({
