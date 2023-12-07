@@ -1,7 +1,5 @@
-import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
-import { Link, useNavigate } from "react-router-dom";
-
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import * as furnitureService from "../../../services/furnitureService";
 import styles from "./ProductDetails.module.css";
 import Path from "../../../constants/paths";
@@ -16,14 +14,18 @@ const ProductDetails = () => {
   const [showMeasurements, setShowMeasurements] = useState(true);
   const [isProductBought, setIsProductBought] = useState(false);
 
-  // Get products
+  // Get product details
   useEffect(() => {
-    furnitureService
-      .getOne(productId)
-      .then((data) => {
-        setProduct(data);
-      })
-      .catch((error) => console.log(error));
+    const fetchData = async () => {
+      try {
+        const productData = await furnitureService.getOne(productId);
+        setProduct(productData);
+      } catch (error) {
+        console.error("Error fetching product details:", error);
+      }
+    };
+
+    fetchData();
   }, [productId]);
 
   // Check if the user has already bought the product
@@ -48,12 +50,10 @@ const ProductDetails = () => {
   // Buy products
   const buyButtonClickHandler = async () => {
     if (isProductBought) {
-      // User has already bought the product
       return;
     }
 
-    // Proceed with the purchase logic
-    const hasConfirmed = confirm(
+    const hasConfirmed = window.confirm(
       `Are you sure you want to buy the product - ${product.name}?`
     );
 
@@ -69,13 +69,12 @@ const ProductDetails = () => {
 
   // Delete products
   const deleteButtonClickHandler = async () => {
-    const hasConfirmed = confirm(
+    const hasConfirmed = window.confirm(
       `Are you sure you want to delete the product - ${product.name}?`
     );
 
     if (hasConfirmed) {
       await furnitureService.remove(productId);
-
       navigate("/furniture");
     }
   };

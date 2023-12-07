@@ -91,6 +91,10 @@ export const edit = async (productId, productData, _ownerId) => {
   return result;
 };
 
+// Delete
+export const remove = async (productId) =>
+  request.remove(`${baseUrl}/${productId}`);
+
 // Buy
 export const buy = async (productId, userId) => {
   const purchaseUrl = `${baseUrl}/purchase/${productId}/${userId}`;
@@ -109,9 +113,22 @@ export const buy = async (productId, userId) => {
   return result;
 };
 
-// Delete
-export const remove = async (productId) =>
-  request.remove(`${baseUrl}/${productId}`);
+// User's bought products
+export const getMyPurchases = async (userId) => {
+  try {
+    const allProducts = await getAll();
+
+    // Filter products where the user's ID is in the buyers array
+    const purchasedProducts = allProducts.filter(
+      (product) => product.buyers && product.buyers.includes(userId)
+    );
+
+    return purchasedProducts;
+  } catch (error) {
+    console.error("Error fetching user's purchased products:", error);
+    throw error;
+  }
+};
 
 // Validators for numbers <= 0
 const genericValidator = (value, condition, errorMessage, setErrors) => {

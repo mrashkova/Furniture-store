@@ -22,7 +22,7 @@
     "_id": "701df2fd-8348-4e6d-ba28-e470042c15d7",
     "name": "FINNALA",
     "category": "Sofa",
-    "price": "1,149.00",
+    "price": "1149.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/finnala-sofa-gunnared-beige__0514366_pe639439_s5.jpg?f=xl",
     "measurements": {
       "width": "241",
@@ -73,7 +73,7 @@
     "_id": "0260e328-61b2-4f7e-8a59-0efffd7ebbe3",
     "name": "ÄPPLARYD",
     "category": "Sofa",
-    "price": "1,149.00",
+    "price": "1149.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/aepplaryd-sofa-lejde-gray-black__0992907_pe820325_s5.jpg?f=xl",
     "measurements": {
       "width": "231",
@@ -89,7 +89,7 @@
     "_id": "4cb1b921-5777-4034-94b8-0facda41fe59",
     "name": "MORABO",
     "category": "Sofa",
-    "price": "1,199.00",
+    "price": "1199.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/morabo-sofa-with-chaise-gunnared-dark-gray-wood__0602368_pe680306_s5.jpg?f=xl",
     "measurements": {
       "width": "244",
@@ -338,116 +338,5 @@
     "articleNumber": "605.470.40",
     "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
     "buyers": []
-  },
-  "purchase": {
-    "7e5cdf1c-878d-4184-a0e0-893b0002ccda": {
-      "35c62d76-8152-4626-8712-eeb96381bea8": {
-        "1752310a-186d-4d3e-9488-af79abdfb2ca": {
-          "_id": "1752310a-186d-4d3e-9488-af79abdfb2ca"
-        },
-        "b05af050-83ba-42e4-abc8-6ef9fd35fcfc": {
-          "_id": "b05af050-83ba-42e4-abc8-6ef9fd35fcfc"
-        }
-      },
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "ff10960d-48ae-4797-87c3-c936e40bd5b0": {
-          "_id": "ff10960d-48ae-4797-87c3-c936e40bd5b0"
-        }
-      }
-    },
-    "701df2fd-8348-4e6d-ba28-e470042c15d7": {
-      "35c62d76-8152-4626-8712-eeb96381bea8": {
-        "4051d6a5-81a4-4ad2-b449-95f9a38c7a36": {
-          "_id": "4051d6a5-81a4-4ad2-b449-95f9a38c7a36"
-        }
-      }
-    },
-    "bc467258-c3c1-47ab-9a13-004fb095b408": {
-      "35c62d76-8152-4626-8712-eeb96381bea8": {
-        "16d741db-ed5a-4261-9655-c01c7a30ce12": {
-          "_id": "16d741db-ed5a-4261-9655-c01c7a30ce12"
-        }
-      },
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "5be4ac9c-85c9-424b-ac4a-0c39b913933a": {
-          "_id": "5be4ac9c-85c9-424b-ac4a-0c39b913933a"
-        }
-      }
-    },
-    "8be32dd4-d3f1-4da6-9540-fd462615fff0": {
-      "35c62d76-8152-4626-8712-eeb96381bea8": {
-        "6fb2984d-8a97-44bc-a8bc-189c385cfd17": {
-          "_id": "6fb2984d-8a97-44bc-a8bc-189c385cfd17"
-        }
-      },
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        "30bd489b-3857-45f2-8e47-af25a22a2d1b": {
-          "_id": "30bd489b-3857-45f2-8e47-af25a22a2d1b"
-        }
-      }
-    },
-    "39d2d347-2657-4ee9-93e7-f7bbfd276b95": {
-      "35c62d76-8152-4626-8712-eeb96381bea8": {
-        "3d32418f-3c11-40ed-bf56-a16acf86c4fa": {
-          "_id": "3d32418f-3c11-40ed-bf56-a16acf86c4fa"
-        }
-      }
-    },
-    "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a": {
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "878ea6a5-4b94-4b3f-9a1d-0330509411ec": {
-          "_id": "878ea6a5-4b94-4b3f-9a1d-0330509411ec"
-        }
-      },
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        "a85e4def-7983-4407-b0e2-182f718921e9": {
-          "_id": "a85e4def-7983-4407-b0e2-182f718921e9"
-        }
-      }
-    },
-    "4cb1b921-5777-4034-94b8-0facda41fe59": {
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "41cb7931-3cd3-46b2-9a0a-38d9ab99c3e3": {
-          "_id": "41cb7931-3cd3-46b2-9a0a-38d9ab99c3e3"
-        },
-        "77dd4048-acd4-499e-8e8d-817683095758": {
-          "_id": "77dd4048-acd4-499e-8e8d-817683095758"
-        }
-      },
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        "cb6ff839-107a-4ddf-bef4-82e211eb073e": {
-          "_id": "cb6ff839-107a-4ddf-bef4-82e211eb073e"
-        }
-      }
-    },
-    "a4ea39cb-c484-40d4-ad53-b932f3b5d1de": {
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "268d3765-b59d-4864-9e2e-bdf5c370312b": {
-          "_id": "268d3765-b59d-4864-9e2e-bdf5c370312b"
-        },
-        "d56cfaf3-2134-4744-afce-0d47b4fd1c4e": {
-          "_id": "d56cfaf3-2134-4744-afce-0d47b4fd1c4e"
-        }
-      },
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        "c5806205-4c0a-4f84-a09e-22dd78bbd80a": {
-          "_id": "c5806205-4c0a-4f84-a09e-22dd78bbd80a"
-        }
-      }
-    },
-    "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618": {
-      "8c72bc6a-9ced-4acb-a0dc-6aab8eb10739": {
-        "4501c58c-35cb-4699-95cf-ecde3f1fcaf3": {
-          "_id": "4501c58c-35cb-4699-95cf-ecde3f1fcaf3"
-        }
-      }
-    },
-    "0c9c98d9-a2a4-401b-823b-863b9fb050e7": {
-      "847ec027-f659-4086-8032-5173e2f9c93a": {
-        "8f536e0d-cd86-4e0e-8805-9f8527c5e32b": {
-          "_id": "8f536e0d-cd86-4e0e-8805-9f8527c5e32b"
-        }
-      }
-    }
   }
 }

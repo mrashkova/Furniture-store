@@ -9,7 +9,9 @@ const Catalogue = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    furnitureService.getAll().then((result) => setProducts(result));
+    furnitureService.getAll().then((result) => {
+      setProducts(result);
+    });
   }, []);
 
   return (
@@ -21,20 +23,12 @@ const Catalogue = () => {
 
         <div className="allProducts-content">
           <div className="row">
-            {products.map((product) => (
-              <ProductItem key={product._id} {...product} />
+            {products.map((product, _id) => (
+              <ProductItem key={_id} {...product} />
             ))}
-
             {products.length === 0 && (
               <h3 className={styles.noProducts}>There are no products yet.</h3>
             )}
-
-            {/* {showDelete && (
-              <ProductDeleteModal
-                onClose={() => setShowDelete(false)}
-                onDelete={deleteProductHandler}
-              />
-            )} */}
           </div>
         </div>
       </div>

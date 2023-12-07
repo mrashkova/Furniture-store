@@ -1,22 +1,9 @@
 import { Link } from "react-router-dom";
-
 import styles from "./ProductItem.module.css";
-// import Path from "../../../constants/paths";
-// import pathToUrl from "../../../utils/pathUtils";
-const ProductItem = ({
-  _id,
-  name,
-  category,
-  price,
-  imageUrl,
-  // onDeleteClick,
-}) => {
-  // const deleteClickHandler = () => {
-  //   onDeleteClick(_id);
-  // };
 
+const ProductItem = ({ _id, name, category, price, imageUrl }) => {
   return (
-    <div className="col-sm-3">
+    <div key={_id} className="col-sm-3">
       <Link to={`/furniture/${_id}`} className={styles.singleProduct}>
         <div className="single-product">
           <div className="single-product-txt text-center">
@@ -27,8 +14,6 @@ const ProductItem = ({
           </div>
         </div>
       </Link>
-
-      {/* <button onClick={deleteClickHandler}>Delete</button> */}
     </div>
   );
 };

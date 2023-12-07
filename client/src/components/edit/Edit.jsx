@@ -51,9 +51,16 @@ const Edit = () => {
     const values = Object.fromEntries(new FormData(e.currentTarget));
 
     try {
+      // Perform the edit operation
       await furnitureService.edit(productId, values);
 
-      navigate(`/furniture/${productId}`);
+      // Fetch the updated product data after editing
+      const updatedProduct = await furnitureService.getOne(productId);
+
+      // Update the state with the new product data
+      setProduct(updatedProduct);
+
+      navigate(`/furniture/${productId}`); // Navigate to the updated product details page
     } catch (err) {
       console.error("Error editing product:", err);
 

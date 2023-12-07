@@ -33,12 +33,9 @@ function HomeCarousel() {
                   {mostBoughtProduct.description}
                 </p>
                 <div>
-                  <p>{mostBoughtProduct.price}</p>
+                  <p>${mostBoughtProduct.price}</p>
                 </div>
-                <button className="btn-cart welcome-add-cart">
-                  <span className="lnr lnr-plus-circle"></span>
-                  add <span>to</span> cart
-                </button>
+
                 <Link
                   to={`/furniture/${mostBoughtProduct._id}`}
                   className="btn-cart welcome-add-cart welcome-more-info"
