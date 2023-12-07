@@ -13,19 +13,35 @@ const Edit = () => {
     description: "",
     imageUrl: "",
     price: "",
-    width: "",
-    depth: "",
-    length: "",
+    measurements: {
+      width: "",
+      depth: "",
+      height: "",
+    },
   });
+  const [initialState, setInitialState] = useState({
+    name: "",
+    category: "",
+    description: "",
+    imageUrl: "",
+    price: "",
+    measurements: {
+      width: "",
+      depth: "",
+      height: "",
+    },
+  });
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     furnitureService.getOne(productId).then((result) => {
       setProduct(result);
+      setInitialState(result);
     });
   }, [productId]);
 
   const resetCreateFormHandler = () => {
-    setCreateValues(createInitialState);
+    setProduct(initialState);
     setErrors({});
   };
 
@@ -37,17 +53,52 @@ const Edit = () => {
     try {
       await furnitureService.edit(productId, values);
 
-      navigate("/furniture");
+      navigate(`/furniture/${productId}`);
     } catch (err) {
-      console.log(err);
+      console.error("Error editing product:", err);
+
+      // Assuming your error response structure has a property "message"
+      if (err.response && err.response.data && err.response.data.message) {
+        setErrors({ general: err.response.data.message });
+      } else {
+        setErrors({ general: "An error occurred while editing the product." });
+      }
     }
   };
 
   const onChange = (e) => {
-    setProduct((state) => ({
-      ...state,
-      [e.target.name]: e.target.value,
+    const { name, value } = e.target;
+
+    if (name === "width" || name === "depth" || name === "height") {
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        measurements: {
+          ...prevProduct.measurements,
+          [name]: value,
+        },
+      }));
+    } else {
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        [name]: value,
+      }));
+    }
+
+    // Clear errors for the current field on change
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "",
     }));
+
+    // Validate the current field
+    if (
+      name === "price" ||
+      name === "width" ||
+      name === "depth" ||
+      name === "height"
+    ) {
+      furnitureService.validatePositiveNumber(value, name, setErrors);
+    }
   };
 
   return (
@@ -92,7 +143,7 @@ const Edit = () => {
             id="description"
             name="description"
             placeholder={"Enter product description"}
-            value={product.category}
+            value={product.description}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
@@ -103,25 +154,25 @@ const Edit = () => {
             id="imageUrl"
             name="imageUrl"
             placeholder={"Enter product image URL"}
-            value={product.category}
+            value={product.imageUrl}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
           />
 
           <label htmlFor="price">Price: </label>
           <input
-            type="text"
+            type="number"
             id="price"
             name="price"
             placeholder={"Enter product price"}
             value={product.price}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
-            // className={errors.price && styles.inputError}
+            className={errors.price && styles.inputError}
           />
-          {/* {errors.price && (
+          {errors.price && (
             <p className={styles.errorMessage}>{errors.price}</p>
-          )} */}
+          )}
 
           <h3>Measurements</h3>
           <div className={styles.measurements}>
@@ -134,13 +185,13 @@ const Edit = () => {
                 value={product.measurements?.width}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
-                // className={errors.width && styles.inputError}
+                className={errors.width && styles.inputError}
               />
             </div>
 
-            {/* {errors.width && (
-            <p className={styles.errorMessage}>{errors.width}</p>
-          )} */}
+            {errors.width && (
+              <p className={styles.errorMessage}>{errors.width}</p>
+            )}
 
             <div className={styles.depth}>
               {" "}
@@ -152,13 +203,13 @@ const Edit = () => {
                 value={product.measurements?.depth}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
-                // className={errors.depth && styles.inputError}
+                className={errors.depth && styles.inputError}
               />
             </div>
 
-            {/* {errors.depth && (
-            <p className={styles.errorMessage}>{errors.depth}</p>
-          )} */}
+            {errors.depth && (
+              <p className={styles.errorMessage}>{errors.depth}</p>
+            )}
             <div className={styles.height}>
               {" "}
               <label htmlFor="height">Height: </label>
@@ -169,16 +220,18 @@ const Edit = () => {
                 value={product.measurements?.height}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
-                // className={errors.height && styles.inputError}
+                className={errors.height && styles.inputError}
               />
             </div>
           </div>
-          {/* {errors.height && (
-          <p className={styles.errorMessage}>{errors.height}</p>
-        )} */}
+          {errors.height && (
+            <p className={styles.errorMessage}>{errors.height}</p>
+          )}
           <div>
             <button type="submit">Edit</button>
-            <button type="button">Reset</button>
+            <button type="button" onClick={resetCreateFormHandler}>
+              Reset
+            </button>
           </div>
         </div>
       </form>

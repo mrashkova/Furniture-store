@@ -71,7 +71,7 @@ export const create = async (productData, _ownerId) => {
 };
 
 // Edit
-export const edit = async (productId, productData) => {
+export const edit = async (productId, productData, _ownerId) => {
   const body = {
     name: productData.name,
     category: productData.category,
