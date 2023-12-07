@@ -4,32 +4,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 154px;
+  height: 60px;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
 }
-.footerCopyright p,
-.footerCopyright p a {
-  color: #a5adb3;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: center;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 .footerSocial {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.footerSocial a i {
-  color: #a4aaaf;
-  margin: 0 18px 24px 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  text-align: center;
-}
-.footerSocial i:hover {
-  color: #e99c2e;
+  margin-top: 10px;
 }

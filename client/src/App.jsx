@@ -5,7 +5,7 @@ import { AuthProvider } from "./contexts/authContext";
 import Path from "./constants/paths";
 import AuthGuard from "./components/guards/AuthGuard";
 
-import Navigation from "./components/header/Navigation";
+import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Catalogue from "./components/catalogue/Catalogue";
 import ProductDetails from "./components/catalogue/productItem/ProductDetails";
@@ -22,7 +22,7 @@ import NotFound from "./components/notFound/NotFound";
 function App() {
   return (
     <AuthProvider>
-      <Navigation />
+      <Header />
 
       <Routes>
         <Route path={Path.Home} element={<Home />} />
