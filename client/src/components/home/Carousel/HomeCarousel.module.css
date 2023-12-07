@@ -1,5 +1,3 @@
-/* HomeCarousel.module.css */
-
 .carouselContainer {
   margin: auto;
 }
@@ -18,8 +16,8 @@
 
 .innerBox {
   display: flex;
-  width: 80%; /* Adjusted width to 80% of the outer box */
-  margin: auto; /* Center the inner boxes */
+  width: 80%;
+  margin: auto;
 }
 
 .imageBox {

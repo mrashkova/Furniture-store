@@ -51,20 +51,14 @@ const Edit = () => {
     const values = Object.fromEntries(new FormData(e.currentTarget));
 
     try {
-      // Perform the edit operation
       await furnitureService.edit(productId, values);
-
-      // Fetch the updated product data after editing
       const updatedProduct = await furnitureService.getOne(productId);
-
-      // Update the state with the new product data
       setProduct(updatedProduct);
 
-      navigate(`/furniture/${productId}`); // Navigate to the updated product details page
+      navigate(`/furniture/${productId}`);
     } catch (err) {
       console.error("Error editing product:", err);
 
-      // Assuming your error response structure has a property "message"
       if (err.response && err.response.data && err.response.data.message) {
         setErrors({ general: err.response.data.message });
       } else {
@@ -91,7 +85,6 @@ const Edit = () => {
       }));
     }
 
-    // Clear errors for the current field on change
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: "",

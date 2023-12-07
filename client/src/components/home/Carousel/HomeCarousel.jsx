@@ -1,5 +1,3 @@
-// HomeCarousel.jsx
-
 import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import * as furnitureService from "../../../services/furnitureService";

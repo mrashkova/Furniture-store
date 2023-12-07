@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
     email: auth.email,
     userId: auth._id,
     isAuthenticated: !!auth.accessToken,
-    accessToken: auth.accessToken, // Include the accessToken in the context
+    accessToken: auth.accessToken,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

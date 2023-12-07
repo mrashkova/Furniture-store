@@ -63,7 +63,7 @@ export const create = async (productData, _ownerId) => {
     },
     description: productData.description,
     articleNumber: productData.articleNumber,
-    _ownerId: _ownerId, // Pass ownerId to the request body
+    _ownerId: _ownerId,
   };
 
   const result = await request.post(baseUrl, body);

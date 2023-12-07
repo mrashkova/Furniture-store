@@ -92,8 +92,6 @@ const CreateProduct = ({ createRef }) => {
     };
 
     try {
-      // Assuming the AuthContext provides the user ID
-      // If not, make sure to obtain the user ID from wherever it's available
       await furnitureService.create(productData, userId);
       navigate("/furniture");
     } catch (err) {

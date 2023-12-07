@@ -1,5 +1,3 @@
-// authServices.js
-
 import * as request from "../lib/request";
 
 const baseUrl = "http://localhost:3030/users";
@@ -35,7 +33,6 @@ export const register = async (email, password) => {
   return result;
 };
 
-// Add a function to check if the user is authenticated
 export const isAuthenticated = () => {
   // Check if the authentication token is present in localStorage
   return localStorage.getItem("authToken") !== null;
