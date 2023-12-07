@@ -6,28 +6,23 @@
   border-radius: 5px;
   background-color: #f8f9fa;
   padding: 50px;
-  width: 650px;
-  position: relative;
-  width: 650px;
-  height: auto;
-  border-radius: 20px;
-  padding: 40px;
-  box-sizing: border-box;
+  width: 70%; /* Adjusted width */
   margin: auto;
-  width: 50%;
-  align-items: center;
   display: flex;
-  justify-content: space-between;
 }
 
 .singleProductImg {
-  float: left;
-  width: 100%;
   flex: 1;
 }
 
+.singleProductImg img {
+  width: 100%; /* Make the image responsive within its container */
+  max-height: 400px; /* Set a maximum height to prevent it from being too large */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10px; /* Add border-radius to the image */
+}
+
 .singleProductInfo {
-  float: right;
   flex: 1;
   text-align: left;
   margin-left: 20px;
@@ -38,21 +33,16 @@
   justify-content: space-between;
 }
 
-.width {
-  float: left;
-}
-
-.depth {
-  float: center;
-}
-
+.width,
+.depth,
 .height {
-  float: right;
+  flex: 1; /* Equal width for each measurement */
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px; /* Add some space between the buttons and the content */
 }
 
 .customerButton {

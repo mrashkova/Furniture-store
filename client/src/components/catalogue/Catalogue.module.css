@@ -6,3 +6,16 @@
   left: 0;
   right: 0;
 }
+
+.allProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.noProducts {
+  width: 100%; /* Ensure full width when there are no products */
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}

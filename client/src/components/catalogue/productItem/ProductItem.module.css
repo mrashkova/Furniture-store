@@ -1,9 +1,43 @@
 .singleProduct {
-  color: #5f5b57;
+  display: block;
   text-decoration: none;
+  color: #5f5b57;
+  transition: color 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
 }
 
 .singleProduct:hover {
-  text-decoration: none;
   color: #998d80;
+  border-color: #998d80;
+}
+
+.singleProductTxt {
+  padding: 20px;
+  text-align: center;
+}
+
+.singleProduct img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.allProductsCategory {
+  color: #888;
+  font-size: 0.9em;
+}
+
+h5 {
+  color: #333;
+  font-size: 1.1em;
+  margin-top: 10px;
 }

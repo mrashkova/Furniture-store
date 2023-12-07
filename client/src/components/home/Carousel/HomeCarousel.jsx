@@ -1,9 +1,9 @@
-import styles from "./HomeCarousel.module.css";
-import { Link } from "react-router-dom";
+// HomeCarousel.jsx
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import * as furnitureService from "../../../services/furnitureService";
+import styles from "./HomeCarousel.module.css";
 
 function HomeCarousel() {
   const [mostBoughtProducts, setMostBoughtProducts] = useState([]);
@@ -17,36 +17,39 @@ function HomeCarousel() {
 
   return (
     <section className={styles.carouselContainer}>
-      <Carousel data-bs-theme="dark" className={styles.carousel}>
-        {mostBoughtProducts.map((mostBoughtProduct) => (
-          <Carousel.Item key={mostBoughtProduct._id}>
-            <img
-              className={styles.welcomeImg}
-              src={mostBoughtProduct.imageUrl}
-              alt={`${mostBoughtProduct.name} image`}
-            />
-            <Carousel.Caption className={styles.carouselCaption}>
-              <div className={styles.welcomeTxt}>
-                <h4>{mostBoughtProduct.name}</h4>
-                <h2>{mostBoughtProduct.category}</h2>
-                <p className={styles.description}>
-                  {mostBoughtProduct.description}
-                </p>
-                <div>
-                  <p>${mostBoughtProduct.price}</p>
+      <div className={styles.carouselBox}>
+        <Carousel data-bs-theme="dark" className={styles.carousel}>
+          {mostBoughtProducts.map((mostBoughtProduct) => (
+            <Carousel.Item key={mostBoughtProduct._id}>
+              <div className={styles.innerBox}>
+                <div className={styles.imageBox}>
+                  <img
+                    className={styles.welcomeImg}
+                    src={mostBoughtProduct.imageUrl}
+                    alt={`${mostBoughtProduct.name} image`}
+                  />
                 </div>
-
-                <Link
-                  to={`/furniture/${mostBoughtProduct._id}`}
-                  className="btn-cart welcome-add-cart welcome-more-info"
-                >
-                  Details
-                </Link>
+                <div className={styles.textBox}>
+                  <h4>{mostBoughtProduct.name}</h4>
+                  <h2>{mostBoughtProduct.category}</h2>
+                  <p className={styles.description}>
+                    {mostBoughtProduct.description}
+                  </p>
+                  <div>
+                    <p>${mostBoughtProduct.price}</p>
+                  </div>
+                  <a
+                    href={`/furniture/${mostBoughtProduct._id}`}
+                    className={styles.details}
+                  >
+                    Details
+                  </a>
+                </div>
               </div>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
     </section>
   );
 }

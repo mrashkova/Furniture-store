@@ -15,7 +15,7 @@ const Catalogue = () => {
   }, []);
 
   return (
-    <section id="allProducts" className="allProducts">
+    <section id="allProducts" className={styles.allProducts}>
       <div className="container">
         <div className="section-header">
           <h2>Products</h2>

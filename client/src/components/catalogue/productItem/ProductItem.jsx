@@ -5,8 +5,8 @@ const ProductItem = ({ _id, name, category, price, imageUrl }) => {
   return (
     <div key={_id} className="col-sm-3">
       <Link to={`/furniture/${_id}`} className={styles.singleProduct}>
-        <div className="single-product">
-          <div className="single-product-txt text-center">
+        <div>
+          <div className={styles.singleProductTxt}>
             <img src={imageUrl} alt={`${name} image`} />
             <h3>{name}</h3>
             <p className="allProducts-category">{category}</p>
