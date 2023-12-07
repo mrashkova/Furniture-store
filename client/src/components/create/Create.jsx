@@ -105,7 +105,7 @@ const CreateProduct = ({ createRef }) => {
   };
 
   return (
-    <section className={styles.creatPage}>
+    <section className={styles.createPage}>
       <form ref={createRef} id="create" onSubmit={createProductHandler}>
         <div className={styles.container}>
           <h3>Product Information</h3>

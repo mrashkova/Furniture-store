@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import * as furnitureService from "../../services/furnitureService";
 import styles from "./Edit.module.css";
+import AuthGuard from "../guards/AuthGuard";
 
 const Edit = () => {
   const navigate = useNavigate();
@@ -103,144 +104,146 @@ const Edit = () => {
 
   return (
     <section className={styles.editPage}>
-      <form id="edit" onSubmit={editProductSubmitHandler}>
-        <div className={styles.container}>
-          <h3>Edit Product</h3>
-          <label htmlFor="articleNumber">Article Number: </label>
-          <input
-            type="text"
-            id="articleNumber"
-            name="articleNumber"
-            value={product.articleNumber}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-          />
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder={"Enter product name"}
-            value={product.name}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-          />
+      <AuthGuard product={product}>
+        <form id="edit" onSubmit={editProductSubmitHandler}>
+          <div className={styles.container}>
+            <h3>Edit Product</h3>
+            <label htmlFor="articleNumber">Article Number: </label>
+            <input
+              type="text"
+              id="articleNumber"
+              name="articleNumber"
+              value={product.articleNumber}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+            />
+            <label htmlFor="name">Name: </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder={"Enter product name"}
+              value={product.name}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+            />
 
-          <label htmlFor="category">Category: </label>
-          <input
-            type="text"
-            id="category"
-            name="category"
-            placeholder={"Enter product category"}
-            value={product.category}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-          />
+            <label htmlFor="category">Category: </label>
+            <input
+              type="text"
+              id="category"
+              name="category"
+              placeholder={"Enter product category"}
+              value={product.category}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+            />
 
-          <label htmlFor="description">Description: </label>
-          <textarea
-            type="text"
-            id="description"
-            name="description"
-            placeholder={"Enter product description"}
-            value={product.description}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-          />
+            <label htmlFor="description">Description: </label>
+            <textarea
+              type="text"
+              id="description"
+              name="description"
+              placeholder={"Enter product description"}
+              value={product.description}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+            />
 
-          <label htmlFor="imageUrl">Image URL: </label>
-          <input
-            type="text"
-            id="imageUrl"
-            name="imageUrl"
-            placeholder={"Enter product image URL"}
-            value={product.imageUrl}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-          />
+            <label htmlFor="imageUrl">Image URL: </label>
+            <input
+              type="text"
+              id="imageUrl"
+              name="imageUrl"
+              placeholder={"Enter product image URL"}
+              value={product.imageUrl}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+            />
 
-          <label htmlFor="price">Price: </label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            placeholder={"Enter product price"}
-            value={product.price}
-            onChange={onChange}
-            onBlur={() => console.log("onBlur")}
-            className={errors.price && styles.inputError}
-          />
-          {errors.price && (
-            <p className={styles.errorMessage}>{errors.price}</p>
-          )}
-
-          <h3>Measurements</h3>
-          <div className={styles.measurements}>
-            <div className={styles.width}>
-              <label htmlFor="width">Width: </label>
-              <input
-                type="number"
-                id="width"
-                name="width"
-                value={product.measurements?.width}
-                onChange={onChange}
-                onBlur={() => console.log("onBlur")}
-                className={errors.width && styles.inputError}
-              />
-            </div>
-
-            {errors.width && (
-              <p className={styles.errorMessage}>{errors.width}</p>
+            <label htmlFor="price">Price: </label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder={"Enter product price"}
+              value={product.price}
+              onChange={onChange}
+              onBlur={() => console.log("onBlur")}
+              className={errors.price && styles.inputError}
+            />
+            {errors.price && (
+              <p className={styles.errorMessage}>{errors.price}</p>
             )}
 
-            <div className={styles.depth}>
-              {" "}
-              <label htmlFor="depth">Depth: </label>
-              <input
-                type="number"
-                id="depth"
-                name="depth"
-                value={product.measurements?.depth}
-                onChange={onChange}
-                onBlur={() => console.log("onBlur")}
-                className={errors.depth && styles.inputError}
-              />
-            </div>
+            <h3>Measurements</h3>
+            <div className={styles.measurements}>
+              <div className={styles.width}>
+                <label htmlFor="width">Width: </label>
+                <input
+                  type="number"
+                  id="width"
+                  name="width"
+                  value={product.measurements?.width}
+                  onChange={onChange}
+                  onBlur={() => console.log("onBlur")}
+                  className={errors.width && styles.inputError}
+                />
+              </div>
 
-            {errors.depth && (
-              <p className={styles.errorMessage}>{errors.depth}</p>
+              {errors.width && (
+                <p className={styles.errorMessage}>{errors.width}</p>
+              )}
+
+              <div className={styles.depth}>
+                {" "}
+                <label htmlFor="depth">Depth: </label>
+                <input
+                  type="number"
+                  id="depth"
+                  name="depth"
+                  value={product.measurements?.depth}
+                  onChange={onChange}
+                  onBlur={() => console.log("onBlur")}
+                  className={errors.depth && styles.inputError}
+                />
+              </div>
+
+              {errors.depth && (
+                <p className={styles.errorMessage}>{errors.depth}</p>
+              )}
+              <div className={styles.height}>
+                {" "}
+                <label htmlFor="height">Height: </label>
+                <input
+                  type="number"
+                  id="height"
+                  name="height"
+                  value={product.measurements?.height}
+                  onChange={onChange}
+                  onBlur={() => console.log("onBlur")}
+                  className={errors.height && styles.inputError}
+                />
+              </div>
+            </div>
+            {errors.height && (
+              <p className={styles.errorMessage}>{errors.height}</p>
             )}
-            <div className={styles.height}>
-              {" "}
-              <label htmlFor="height">Height: </label>
-              <input
-                type="number"
-                id="height"
-                name="height"
-                value={product.measurements?.height}
-                onChange={onChange}
-                onBlur={() => console.log("onBlur")}
-                className={errors.height && styles.inputError}
-              />
+            <div>
+              <button className={styles.edit} type="submit">
+                Edit
+              </button>
+              <button
+                className={styles.reset}
+                type="button"
+                onClick={resetCreateFormHandler}
+              >
+                Reset
+              </button>
             </div>
           </div>
-          {errors.height && (
-            <p className={styles.errorMessage}>{errors.height}</p>
-          )}
-          <div>
-            <button className={styles.edit} type="submit">
-              Edit
-            </button>
-            <button
-              className={styles.reset}
-              type="button"
-              onClick={resetCreateFormHandler}
-            >
-              Reset
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </AuthGuard>
     </section>
   );
 };

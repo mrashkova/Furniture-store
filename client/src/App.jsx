@@ -28,19 +28,21 @@ function App() {
         <Route path={Path.Home} element={<Home />} />
         <Route path={Path.Catalogue} element={<Catalogue />} />
         <Route path={Path.ProductDetails} element={<ProductDetails />} />
-
         <Route path={Path.AboutUs} element={<AboutUs />} />
         <Route path={Path.MyPurchases} element={<MyPurchases />} />
         <Route path={Path.Login} element={<Login />} />
         <Route path={Path.Register} element={<Register />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path={Path.Logout} element={<Logout />} />
 
+        {/* Apply AuthGuard selectively to routes that require authentication */}
         <Route element={<AuthGuard />}>
           <Route path={Path.Create} element={<Create />} />
           <Route path={Path.Edit} element={<Edit />} />
-          <Route path={Path.Logout} element={<Logout />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
+
       <Footer />
     </AuthProvider>
   );

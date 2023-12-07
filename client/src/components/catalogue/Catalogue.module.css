@@ -1,8 +1,8 @@
 .noProducts {
-  height: 200px; /* Set your desired height */
+  height: 200px;
   text-align: center;
-  line-height: 200px; /* Should be equal to the height to vertically center content */
-  margin: auto; /* Center horizontally */
+  line-height: 200px;
+  margin: auto;
   left: 0;
   right: 0;
 }
@@ -11,10 +11,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 70px;
 }
 
 .noProducts {
-  width: 100%; /* Ensure full width when there are no products */
+  width: 100%;
   text-align: center;
   color: #888;
   margin-top: 20px;
