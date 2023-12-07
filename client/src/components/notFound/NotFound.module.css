@@ -1,0 +1,15 @@
+.notFoundContainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.notFoundTitle {
+  color: #ff6347; /* Tomato color */
+  font-size: 3rem;
+}
+
+.notFoundText {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #777;
+}
