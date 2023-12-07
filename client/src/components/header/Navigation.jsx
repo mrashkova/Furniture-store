@@ -27,20 +27,26 @@ const Navigation = () => {
               Catalogue
             </Nav.Link>
 
-            <Nav.Link as={Link} to={Path.AboutUs}>
-              About Us
-            </Nav.Link>
             {isAuthenticated && (
               <>
                 <Nav.Link as={Link} to={Path.Create}>
                   Add new product
                 </Nav.Link>
-                <Nav.Link as={Link} to={Path.Logout}>
-                  Logout
+                <Nav.Link as={Link} to={Path.MyPurchases}>
+                  My Purchases
                 </Nav.Link>
               </>
             )}
 
+            <Nav.Link as={Link} to={Path.AboutUs}>
+              About Us
+            </Nav.Link>
+
+            {isAuthenticated && (
+              <Nav.Link as={Link} to={Path.Logout}>
+                Logout
+              </Nav.Link>
+            )}
             {!isAuthenticated && (
               <>
                 <Nav.Link as={Link} to={Path.Login}>
