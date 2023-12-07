@@ -24,8 +24,8 @@ textarea[type="text"] {
   box-sizing: border-box;
 }
 
-button[type="submit"],
-button[type="button"] {
+.add,
+.reset {
   width: auto;
   color: white;
   padding: 14px 20px;
@@ -36,19 +36,19 @@ button[type="button"] {
   cursor: pointer;
 }
 
-button[type="submit"] {
+.add {
   background-color: #489050;
 }
 
-button[type="submit"]:hover {
+.add:hover {
   background-color: #006e60;
 }
 
-button[type="button"] {
+.reset {
   background-color: #c25451;
 }
 
-button[type="button"]:hover {
+.reset:hover {
   background-color: #521c00;
 }
 

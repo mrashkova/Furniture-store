@@ -30,8 +30,8 @@ textarea[type="text"] {
   box-sizing: border-box;
 }
 
-button[type="submit"],
-button[type="button"] {
+.edit,
+.reset {
   justify-content: center;
   width: 20%;
   color: white;
@@ -43,19 +43,19 @@ button[type="button"] {
   cursor: pointer;
 }
 
-button[type="submit"] {
+.edit {
   background-color: #489050;
 }
 
-button[type="submit"]:hover {
+.edit:hover {
   background-color: #006e60;
 }
 
-button[type="button"] {
+.reset {
   background-color: #c25451;
 }
 
-button[type="button"]:hover {
+.reset :hover {
   background-color: #521c00;
 }
 

@@ -17,11 +17,7 @@ const Catalogue = () => {
   return (
     <section id="allProducts" className={styles.allProducts}>
       <div className="container">
-        <div className="section-header">
-          <h2>Products</h2>
-        </div>
-
-        <div className="allProducts-content">
+        <div>
           <div className="row">
             {products.map((product, _id) => (
               <ProductItem key={_id} {...product} />

@@ -246,10 +246,18 @@ const CreateProduct = ({ createRef }) => {
             </div>
           </div>
 
-          <button type="submit" disabled={Object.values(errors).some((x) => x)}>
+          <button
+            className={styles.add}
+            type="submit"
+            disabled={Object.values(errors).some((x) => x)}
+          >
             Add new product
           </button>
-          <button type="button" onClick={resetCreateFormHandler}>
+          <button
+            className={styles.reset}
+            type="button"
+            onClick={resetCreateFormHandler}
+          >
             Reset
           </button>
         </div>

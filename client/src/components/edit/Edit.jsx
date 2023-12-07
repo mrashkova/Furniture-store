@@ -228,8 +228,14 @@ const Edit = () => {
             <p className={styles.errorMessage}>{errors.height}</p>
           )}
           <div>
-            <button type="submit">Edit</button>
-            <button type="button" onClick={resetCreateFormHandler}>
+            <button className={styles.edit} type="submit">
+              Edit
+            </button>
+            <button
+              className={styles.reset}
+              type="button"
+              onClick={resetCreateFormHandler}
+            >
               Reset
             </button>
           </div>
