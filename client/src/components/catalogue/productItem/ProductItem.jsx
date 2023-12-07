@@ -23,7 +23,7 @@ const ProductItem = ({
             <img src={imageUrl} alt={`${name} image`} />
             <h3>{name}</h3>
             <p className="allProducts-category">{category}</p>
-            <h5>{price}</h5>
+            <h5>${price}</h5>
           </div>
         </div>
       </Link>

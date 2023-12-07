@@ -55,6 +55,15 @@ const Edit = () => {
       <form id="edit" onSubmit={editProductSubmitHandler}>
         <div className={styles.container}>
           <h3>Edit Product</h3>
+          <label htmlFor="articleNumber">Article Number: </label>
+          <input
+            type="text"
+            id="articleNumber"
+            name="articleNumber"
+            value={product.articleNumber}
+            onChange={onChange}
+            onBlur={() => console.log("onBlur")}
+          />
           <label htmlFor="name">Name: </label>
           <input
             type="text"
@@ -101,11 +110,11 @@ const Edit = () => {
 
           <label htmlFor="price">Price: </label>
           <input
-            type="number"
+            type="text"
             id="price"
             name="price"
             placeholder={"Enter product price"}
-            value={product.category}
+            value={product.price}
             onChange={onChange}
             onBlur={() => console.log("onBlur")}
             // className={errors.price && styles.inputError}
@@ -122,7 +131,7 @@ const Edit = () => {
                 type="number"
                 id="width"
                 name="width"
-                value={product.category}
+                value={product.measurements?.width}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.width && styles.inputError}
@@ -140,7 +149,7 @@ const Edit = () => {
                 type="number"
                 id="depth"
                 name="depth"
-                value={product.category}
+                value={product.measurements?.depth}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.depth && styles.inputError}
@@ -157,7 +166,7 @@ const Edit = () => {
                 type="number"
                 id="height"
                 name="height"
-                value={product.category}
+                value={product.measurements?.height}
                 onChange={onChange}
                 onBlur={() => console.log("onBlur")}
                 // className={errors.height && styles.inputError}

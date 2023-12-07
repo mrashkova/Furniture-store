@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as furnitureService from "../../services/furnitureService";
+import AuthContext from "../../contexts/authContext";
 import styles from "./Create.module.css";
 
 const createInitialState = {
@@ -19,6 +20,7 @@ const CreateProduct = ({ createRef }) => {
   const navigate = useNavigate();
   const articleInputRef = useRef();
   const isMountedRef = useRef(false);
+  const { userId } = useContext(AuthContext);
   const [createValues, setCreateValues] = useState(createInitialState);
   const [errors, setErrors] = useState({});
 
@@ -26,7 +28,6 @@ const CreateProduct = ({ createRef }) => {
     articleInputRef.current.focus();
   }, []);
 
-  // Executes only on update
   useEffect(() => {
     if (!isMountedRef.current) {
       isMountedRef.current = true;
@@ -51,7 +52,6 @@ const CreateProduct = ({ createRef }) => {
       [e.target.name]: value,
     }));
 
-    // Immediately validate the input on change
     validateInput(e.target.name, value);
   };
 
@@ -73,12 +73,10 @@ const CreateProduct = ({ createRef }) => {
   const createProductHandler = async (e) => {
     e.preventDefault();
 
-    // Validate all inputs before submitting the form
     Object.entries(createValues).forEach(([fieldName, value]) => {
       validateInput(fieldName, value);
     });
 
-    // Check if there are any validation errors before submitting
     if (Object.values(errors).some((x) => x)) {
       console.log("Form has errors. Cannot submit.");
       return;
@@ -94,10 +92,9 @@ const CreateProduct = ({ createRef }) => {
     };
 
     try {
-      const authToken = localStorage.getItem("authToken");
-
+      // Assuming the AuthContext provides the user ID
+      // If not, make sure to obtain the user ID from wherever it's available
       await furnitureService.create(productData, userId);
-
       navigate("/furniture");
     } catch (err) {
       console.error("Error creating product:", err);

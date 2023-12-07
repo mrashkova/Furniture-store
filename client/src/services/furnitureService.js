@@ -30,7 +30,7 @@ export const getOne = async (productId) => {
   return result;
 };
 
-export const create = async (productData, ownerId) => {
+export const create = async (productData, _ownerId) => {
   const body = {
     name: productData.name,
     category: productData.category,
@@ -43,7 +43,7 @@ export const create = async (productData, ownerId) => {
     },
     description: productData.description,
     articleNumber: productData.articleNumber,
-    ownerId: ownerId, // Pass ownerId to the request body
+    _ownerId: _ownerId, // Pass ownerId to the request body
   };
 
   const result = await request.post(baseUrl, body);
@@ -63,7 +63,7 @@ export const edit = async (productId, productData) => {
     },
     description: productData.description,
     articleNumber: productData.articleNumber,
-    ownerId: ownerId,
+    _ownerId: _ownerId,
   };
 
   const result = await request.put(`${baseUrl}/${productId}`, body);

@@ -3,7 +3,7 @@
     "_id": "7e5cdf1c-878d-4184-a0e0-893b0002ccda",
     "name": "KIVIK",
     "category": "Sofa",
-    "price": "$749.00",
+    "price": "749.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/kivik-sofa-tibbleby-beige-gray__1056144_pe848277_s5.jpg?f=xl",
     "measurements": {
       "width": "228",
@@ -18,7 +18,7 @@
     "_id": "701df2fd-8348-4e6d-ba28-e470042c15d7",
     "name": "FINNALA",
     "category": "Sofa",
-    "price": "$1,149.00",
+    "price": "1,149.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/finnala-sofa-gunnared-beige__0514366_pe639439_s5.jpg?f=xl",
     "measurements": {
       "width": "241",
@@ -33,7 +33,7 @@
     "_id": "bc467258-c3c1-47ab-9a13-004fb095b408",
     "name": "LINANÄS",
     "category": "Sofa",
-    "price": "$749.00",
+    "price": "749.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/linanaes-sofa-vissle-dark-gray__1013898_pe829450_s5.jpg?f=xl",
     "measurements": {
       "width": "197",
@@ -48,7 +48,7 @@
     "_id": "1c301890-569c-4a97-b56b-745024debaac",
     "name": "GAMMALBYN",
     "category": "Sofa",
-    "price": "$499.00",
+    "price": "499.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/gammalbyn-sofa-gray__0868926_pe781434_s5.jpg?f=xl",
     "measurements": {
       "width": "201",
@@ -63,7 +63,7 @@
     "_id": "0260e328-61b2-4f7e-8a59-0efffd7ebbe3",
     "name": "ÄPPLARYD",
     "category": "Sofa",
-    "price": "$1,149.00",
+    "price": "1,149.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/aepplaryd-sofa-lejde-gray-black__0992907_pe820325_s5.jpg?f=xl",
     "measurements": {
       "width": "231",
@@ -78,7 +78,7 @@
     "_id": "4cb1b921-5777-4034-94b8-0facda41fe59",
     "name": "MORABO",
     "category": "Sofa",
-    "price": "$1,199.00",
+    "price": "1,199.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/morabo-sofa-with-chaise-gunnared-dark-gray-wood__0602368_pe680306_s5.jpg?f=xl",
     "measurements": {
       "width": "244",
@@ -94,7 +94,7 @@
     "_id": "a4de47ac-1473-4122-8bb9-d84787099a79",
     "name": "EKEDALEN",
     "category": "Table",
-    "price": "$239.99",
+    "price": "239.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/ekedalen-extendable-table-dark-brown__0736963_pe740827_s5.jpg?f=xl",
     "measurements": {
       "width": "120",
@@ -109,7 +109,7 @@
     "_id": "0c9c98d9-a2a4-401b-823b-863b9fb050e7",
     "name": "INGATORP",
     "category": "Table",
-    "price": "$399.99",
+    "price": "399.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/ingatorp-extendable-table-white__0737089_pe740879_s5.jpg?f=xl",
     "measurements": {
       "width": "110",
@@ -124,7 +124,7 @@
     "_id": "8793cbc1-8e5f-4e06-8383-0afe19772dcb",
     "name": "LISABO",
     "category": "Table",
-    "price": "$199.99",
+    "price": "199.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-table-ash-veneer__0737105_pe740883_s5.jpg?f=xl",
     "measurements": {
       "width": "104",
@@ -139,7 +139,7 @@
     "_id": "a4ea39cb-c484-40d4-ad53-b932f3b5d1de",
     "name": "NORDEN",
     "category": "Table",
-    "price": "$279.99",
+    "price": "279.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/norden-gateleg-table-birch__66396_pe179294_s5.jpg?f=xl",
     "measurements": {
       "width": "152",
@@ -154,7 +154,7 @@
     "_id": "39d2d347-2657-4ee9-93e7-f7bbfd276b95",
     "name": "TARSELE",
     "category": "Table",
-    "price": "$559.00",
+    "price": "559.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/tarsele-extendable-table-oak-veneer-black__0916857_pe785431_s5.jpg?f=xl",
     "measurements": {
       "width": "200",
@@ -170,7 +170,7 @@
     "_id": "8be32dd4-d3f1-4da6-9540-fd462615fff0",
     "name": "NOLMYRA",
     "category": "Chair",
-    "price": "$49.99",
+    "price": "49.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/nolmyra-chair-birch-veneer-gray__0152020_pe310348_s5.jpg?f=xl",
     "measurements": {
       "width": "55",
@@ -186,7 +186,7 @@
     "_id": "67c771a8-2a8d-4dcf-ae3f-2fe76a6ec618",
     "name": "POÄNG",
     "category": "Chair",
-    "price": "$119.00",
+    "price": "119.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/poaeng-armchair-birch-veneer-knisa-black__0571496_pe666929_s5.jpg?f=xl",
     "measurements": {
       "width": "68",
@@ -202,7 +202,7 @@
     "_id": "ee5e2889-6ae4-47bf-963f-18222905fc0a",
     "name": "LIDÅS",
     "category": "Chair",
-    "price": "$55.00",
+    "price": "55.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/lidas-chair-white-sefast-white__1106351_pe868690_s5.jpg?f=xl",
     "measurements": {
       "width": "32",
@@ -218,7 +218,7 @@
     "_id": "ca97a76e-e632-42c2-b003-3bbeccf9ec65",
     "name": "STEFAN",
     "category": "Chair",
-    "price": "$35.00",
+    "price": "35.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/stefan-chair-brown-black__0727320_pe735593_s5.jpg?f=xl",
     "measurements": {
       "width": "33",
@@ -234,7 +234,7 @@
     "_id": "a906e90c-1dc0-4bb3-8394-a440c31e3b34",
     "name": "KRYLBO",
     "category": "Chair",
-    "price": "$90.00",
+    "price": "90.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/krylbo-chair-tonerud-dark-beige__1208495_pe908606_s5.jpg?f=xl",
     "measurements": {
       "width": "55",
@@ -249,7 +249,7 @@
     "_id": "e708abf0-8d62-45b5-b852-c64602335ba7",
     "name": "LISABO",
     "category": "Chair",
-    "price": "$85.00",
+    "price": "85.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/lisabo-chair-ash__0786549_pe763015_s5.jpg?f=xl",
     "measurements": {
       "width": "43",
@@ -264,7 +264,7 @@
     "_id": "a7ae892e-7d67-4b49-b62f-b2cbc96add92",
     "name": "LINNEBÄCK",
     "category": "Chair",
-    "price": "$69.99",
+    "price": "69.99",
     "imageUrl": "https://www.ikea.com/us/en/images/products/linnebaeck-chair-orrsta-olive-green__0933454_pe791910_s5.jpg?f=xl",
     "measurements": {
       "width": "55",
@@ -279,7 +279,7 @@
     "_id": "bcc3a72d-7c59-41fb-af50-4496e5e8dc8a",
     "name": "PERSBOL",
     "category": "Chair",
-    "price": "$85.00",
+    "price": "85.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/persbol-armchair-black-tibbleby-beige-gray__1123955_pe874932_s5.jpg?f=xl",
     "measurements": {
       "width": "57",
@@ -294,7 +294,7 @@
     "_id": "4b9025e6-d31d-4605-883c-fc0a3f63a15f",
     "name": "KLINTEN",
     "category": "Chair",
-    "price": "$115.00",
+    "price": "115.00",
     "imageUrl": "https://www.ikea.com/us/en/images/products/klinten-chair-brown-kilanda-light-beige__1156101_pe886899_s5.jpg?f=xl",
     "measurements": {
       "width": "43",

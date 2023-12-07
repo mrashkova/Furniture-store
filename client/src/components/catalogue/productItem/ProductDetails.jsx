@@ -66,8 +66,8 @@ const ProductDetails = () => {
             </div>
           )}
 
-          {userId === product._ownerId && (
-            <div className={styles.buttons}>
+          <div className={styles.buttons}>
+            {userId && userId !== product._ownerId && (
               <div className={styles.customerButton}>
                 <Link
                   to={pathToUrl(Path.Delete, { productId })}
@@ -76,7 +76,8 @@ const ProductDetails = () => {
                   Buy
                 </Link>
               </div>
-
+            )}
+            {userId === product._ownerId && (
               <div className={styles.adminButtons}>
                 <Link
                   to={pathToUrl(Path.Edit, { productId })}
@@ -92,8 +93,8 @@ const ProductDetails = () => {
                   Delete
                 </button>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </section>

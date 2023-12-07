@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
     const result = await authService.register(values.email, values.password);
 
     setAuth(result);
-
     localStorage.setItem("accessToken", result.accessToken);
 
     navigate(Path.Home);
@@ -43,6 +42,7 @@ export const AuthProvider = ({ children }) => {
     email: auth.email,
     userId: auth._id,
     isAuthenticated: !!auth.accessToken,
+    accessToken: auth.accessToken, // Include the accessToken in the context
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
