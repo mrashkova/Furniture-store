@@ -150,5 +150,3 @@ furniture-store/
 ## Contact
 
 Mariya Rashkova - mrashkkova@gmail.com
-
-Project Link: [https://github.com/mrashkova/Simple-Todo-List](https://github.com/mrashkova/Simple-Todo-List)
