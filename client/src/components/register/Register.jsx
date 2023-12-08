@@ -9,7 +9,7 @@ import Path from "../../constants/paths";
 const RegisterFormKeys = {
   Email: "email",
   Password: "password",
-  ConfirmPassword: "confirm-password",
+  ConfirmPassword: "confirmPassword",
 };
 
 export default function Register() {
@@ -18,6 +18,21 @@ export default function Register() {
   const { values, onChange, onSubmit } = useForm(
     async () => {
       try {
+        // Check if passwords match
+        if (
+          values[RegisterFormKeys.Password] !==
+          values[RegisterFormKeys.ConfirmPassword]
+        ) {
+          setError("Your passwords don't match!");
+          return;
+        }
+
+        // Check if the password has at least 5 characters
+        if (values[RegisterFormKeys.Password].length < 5) {
+          setError("Password must be at least 5 characters!");
+          return;
+        }
+
         setError(""); // Clear previous errors
         await registerSubmitHandler(values);
       } catch (error) {
@@ -62,7 +77,7 @@ export default function Register() {
           <input
             type="password"
             name="password"
-            id="register-password"
+            id="registerPassword"
             onChange={onChange}
             values={values[RegisterFormKeys.Password]}
           />
