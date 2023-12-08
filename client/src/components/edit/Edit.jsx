@@ -8,6 +8,7 @@ const Edit = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
   const [product, setProduct] = useState({
+    _id: "",
     name: "",
     category: "",
     description: "",
@@ -20,6 +21,7 @@ const Edit = () => {
     },
   });
   const [initialState, setInitialState] = useState({
+    _id: "",
     name: "",
     category: "",
     description: "",
@@ -33,11 +35,17 @@ const Edit = () => {
   });
   const [errors, setErrors] = useState({});
   const [missingFields, setMissingFields] = useState([]);
+  const [ownerId, setOwnerId] = useState("");
 
   useEffect(() => {
     furnitureService.getOne(productId).then((result) => {
+      console.log(result);
       setProduct(result);
       setInitialState(result);
+
+      // Extract and store the _ownerId
+      const { _ownerId } = result;
+      setOwnerId(_ownerId);
     });
   }, [productId]);
 
@@ -65,14 +73,16 @@ const Edit = () => {
     // Clear missing fields when the form is valid
     setMissingFields([]);
 
-    const values = Object.fromEntries(new FormData(e.currentTarget));
+    const values = { ...product, _id: productId };
 
     try {
-      await furnitureService.edit(productId, values);
+      await furnitureService.edit(productId, values, ownerId);
       const updatedProduct = await furnitureService.getOne(productId);
+
+      // Update the local state with the returned product from the server
       setProduct(updatedProduct);
 
-      navigate(`/furniture/${productId}`);
+      navigate(`/furniture`);
     } catch (err) {
       console.error("Error editing product:", err);
 

@@ -4,7 +4,6 @@ const baseUrl = "http://localhost:3030/jsonstore/furniture";
 // Get all products
 export const getAll = async () => {
   const result = await request.get(baseUrl);
-  console.log(`${baseUrl}/7e5cdf1c-878d-4184-a0e0-893b0002ccda`);
 
   return Object.values(result);
 };
@@ -73,20 +72,23 @@ export const create = async (productData, _ownerId) => {
 // Edit
 export const edit = async (productId, productData, _ownerId) => {
   const body = {
+    _id: productId,
     name: productData.name,
     category: productData.category,
     price: productData.price,
     imageUrl: productData.imageUrl,
     measurements: {
-      width: productData.width,
-      depth: productData.depth,
-      height: productData.height,
+      width: productData.measurements.width,
+      depth: productData.measurements.depth,
+      height: productData.measurements.height,
     },
     description: productData.description,
     articleNumber: productData.articleNumber,
     _ownerId: _ownerId,
+    buyers: productData.buyers || [], // Retain the buyers array
   };
 
+  console.log(body);
   const result = await request.put(`${baseUrl}/${productId}`, body);
   return result;
 };

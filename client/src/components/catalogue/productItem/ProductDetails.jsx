@@ -15,17 +15,17 @@ const ProductDetails = () => {
   const [isProductBought, setIsProductBought] = useState(false);
 
   // Get product details
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const productData = await furnitureService.getOne(productId);
-        setProduct(productData);
-      } catch (error) {
-        console.error("Error fetching product details:", error);
-      }
-    };
+  const fetchProductDetails = async () => {
+    try {
+      const productData = await furnitureService.getOne(productId);
+      setProduct(productData);
+    } catch (error) {
+      console.error("Error fetching product details:", error);
+    }
+  };
 
-    fetchData();
+  useEffect(() => {
+    fetchProductDetails();
   }, [productId]);
 
   // Check if the user has already bought the product

@@ -6,6 +6,7 @@ import AuthContext from "../../contexts/authContext";
 import styles from "./Create.module.css";
 
 const createInitialState = {
+  articleNumber: "",
   name: "",
   category: "",
   description: "",
