@@ -13,13 +13,13 @@ export default function Header() {
   const { isAuthenticated } = useContext(AuthContext);
 
   return (
-    <header>
+    <header className={styles.header}>
       <Navbar expand="lg" className={styles.navbar}>
         <Container>
-          <Navbar.Brand as={Link} to="/" className={styles.brand}>
+          <Navbar.Brand as={Link} to={Path.Home} className={styles.brand}>
             Furniture Store
           </Navbar.Brand>
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse>
             <Nav>
               <Nav.Link as={Link} to={Path.Home}>
                 Home

@@ -1,3 +1,7 @@
+.footerSection {
+  flex: 1;
+}
+
 .footer {
   background: #f8f9fd;
   display: flex;
@@ -6,10 +10,9 @@
   justify-content: center;
   height: 60px;
   text-align: center;
+  width: 100%;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  margin-top: 20px;
 }
 
 .container {
@@ -19,7 +22,7 @@
   margin: 0 auto;
 }
 
-.footerSocial {
+.footerText {
   display: flex;
   align-items: center;
   justify-content: center;
