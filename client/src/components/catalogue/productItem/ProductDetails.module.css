@@ -6,7 +6,7 @@
   border-radius: 5px;
   background-color: #f8f9fa;
   padding: 50px;
-  width: 70%; /* Adjusted width */
+  width: 70%;
   margin: auto;
   display: flex;
 }
@@ -16,10 +16,10 @@
 }
 
 .singleProductImg img {
-  width: 100%; /* Make the image responsive within its container */
-  max-height: 400px; /* Set a maximum height to prevent it from being too large */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
-  border-radius: 10px; /* Add border-radius to the image */
+  width: 70%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .singleProductInfo {
@@ -36,13 +36,13 @@
 .width,
 .depth,
 .height {
-  flex: 1; /* Equal width for each measurement */
+  flex: 1;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px; /* Add some space between the buttons and the content */
+  margin-top: 20px;
 }
 
 .customerButton {

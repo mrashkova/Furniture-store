@@ -10,7 +10,7 @@ import AuthContext from "../../contexts/authContext";
 import styles from "./Header.module.css";
 
 export default function Header() {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { isAuthenticated, email, logoutHandler } = useContext(AuthContext);
 
   return (
     <header className={styles.header}>
@@ -20,7 +20,7 @@ export default function Header() {
             Furniture Store
           </Navbar.Brand>
           <Navbar.Collapse>
-            <Nav>
+            <Nav className={styles.leftNav}>
               <Nav.Link as={Link} to={Path.Home}>
                 Home
               </Nav.Link>
@@ -44,23 +44,33 @@ export default function Header() {
               </Nav.Link>
 
               {isAuthenticated && (
-                <Nav.Link as={Link} to={Path.Logout} className={styles.logout}>
-                  Logout
-                </Nav.Link>
+                <Nav className={`ml-auto ${styles.rightNav}`}>
+                  <Navbar.Text className={styles.userEmail}>
+                    Logged in as: {email}
+                  </Navbar.Text>
+                  <Nav.Link
+                    as={Link}
+                    to={Path.Logout}
+                    onClick={logoutHandler}
+                    className={`${styles.login} ml-auto`}
+                  >
+                    Logout
+                  </Nav.Link>
+                </Nav>
               )}
               {!isAuthenticated && (
-                <>
+                <Nav className={`ml-auto ${styles.rightNavcontainer}`}>
                   <Nav.Link as={Link} to={Path.Login} className={styles.login}>
                     Login
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to={Path.Register}
-                    className={styles.register}
+                    className={`${styles.register} ml-auto`}
                   >
                     Register
                   </Nav.Link>
-                </>
+                </Nav>
               )}
             </Nav>
           </Navbar.Collapse>

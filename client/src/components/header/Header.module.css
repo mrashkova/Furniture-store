@@ -8,9 +8,36 @@ header {
   right: 0;
   background: #f8f9fd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
 }
 
-.brand,
-.navbar-nav .nav-link {
+.leftNav {
+  flex: 1;
+  align-items: center;
+}
+
+.rightNav {
+  flex: 1;
+  align-items: right;
+  margin-left: 380px;
+}
+
+.rightNavcontainer {
+  flex: 1;
+  align-items: right;
+  margin-left: 770px;
+}
+
+.login,
+.register,
+.logout {
   color: #343a40;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.userEmail {
+  margin-right: 10px;
 }
