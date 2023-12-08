@@ -85,7 +85,7 @@ export const edit = async (productId, productData, _ownerId) => {
     description: productData.description,
     articleNumber: productData.articleNumber,
     _ownerId: _ownerId,
-    buyers: productData.buyers || [], // Retain the buyers array
+    buyers: productData.buyers || [],
   };
 
   console.log(body);

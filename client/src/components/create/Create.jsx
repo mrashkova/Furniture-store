@@ -102,7 +102,7 @@ const CreateProduct = ({ createRef }) => {
       return;
     }
 
-    // Rest of your code for submitting the form
+    // Restructure the measurements field
     const productData = {
       ...createValues,
       measurements: {

@@ -1,4 +1,3 @@
-// AuthGuard for non-authenticated users
 import { useContext } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import AuthContext from "../../contexts/authContext";

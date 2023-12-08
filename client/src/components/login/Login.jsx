@@ -18,7 +18,7 @@ const Login = () => {
   const { values, onChange, onSubmit } = useForm(
     async () => {
       try {
-        setError(""); // Clear previous errors
+        setError("");
         await loginSubmitHandler(values);
       } catch (error) {
         if (
@@ -28,7 +28,7 @@ const Login = () => {
         ) {
           setError(error.response.data.message);
         } else if (error.message) {
-          setError(error.message); // Use the actual error message
+          setError(error.message);
         } else {
           setError("An error occurred during login.");
         }

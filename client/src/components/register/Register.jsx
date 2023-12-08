@@ -33,7 +33,7 @@ export default function Register() {
           return;
         }
 
-        setError(""); // Clear previous errors
+        setError("");
         await registerSubmitHandler(values);
       } catch (error) {
         if (
@@ -43,7 +43,7 @@ export default function Register() {
         ) {
           setError(error.response.data.message);
         } else if (error.message) {
-          setError(error.message); // Use the actual error message
+          setError(error.message);
         } else {
           setError("An error occurred during login.");
         }

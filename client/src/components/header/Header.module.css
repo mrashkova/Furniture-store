@@ -21,7 +21,7 @@ header {
 .rightNav {
   flex: 1;
   align-items: right;
-  margin-left: 380px;
+  margin-left: 360px;
 }
 
 .rightNavcontainer {
