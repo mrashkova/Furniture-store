@@ -1,147 +1,152 @@
-<p align="center">
-  <h2 align="center">Furniture-Store</h2>
+# Furniture Store
 
-  <p align="center">
-    React project for an e-commerce furniture shop. There are two layers of access. As a User and as an Administrator.
-    <br />
-    <br />
-  Deployed with Netlify: 
-    <br />
-    <br />
-    <a href="">View Demo</a>
-    ·
-    <a href="https://github.com/mrashkova/Furniture-store/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/mrashkova/Furniture-store/issues">Request Feature</a>
-  </p>
-</p>
+This repository contains the source code for a simple furniture store application built with React and React Router. The application allows users to browse a catalog of furniture products, view product details, add new products, edit existing products, and purchase products.
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#application-requirements">Application Requirements</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#structure">Structure</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+## Features
 
-<!-- ABOUT THE PROJECT -->
+- Catalog: Browse a catalog of furniture products.
+- Product Details: Detailed information about a specific product.
+- Create Product: Add a new product to the catalog.
+- Edit Product: Modify existing product details.
+- Buy Product: Purchase a product
+- Delete Product: Remove a product from the catalog.
+- About Us: Learn more about the store.
+- Authentication: User login and logout functionalities.
+- Registration: Allow users to register for an account.
 
-## About The Project
+## Installation
 
-### Built With
+1. Clone the repository:
+
+```bash
+  git clone https://github.com/mrashkova/Furniture-store.git
+
+```
+
+2. Change into the project directory:
+
+```bash
+cd Furniture-store
+```
+
+3. Open a terminal and navigate to the server folder:
+
+```bash
+cd server
+npm install
+node server.js
+
+```
+
+4. Open a terminal and navigate to the client folder:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+5. Open your browser and navigate to http://localhost:5173/.
+
+6. To kill/stop the server/client
+
+```bash
+Ctrl + C
+```
+
+## Built with
 
 - [React](https://react.dev/)
-- [Firebase](https://firebase.google.com/)
-- [Bootstrap](https://getbootstrap.com)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/en/main)
+- [React Bootstrap](https://react-bootstrap.netlify.app/)
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Application Requirements
+## Application Requirements
 
 1. Node.js
-2. Firebase registration
-3. Other packages listed in package.json
+2. Other packages listed in package.json
 
-### Installation
+## Folder Structure
 
-Make sure you have already downloaded and install node.js
-
-1. The first thing to do is to clone the repository:
-
-```sh
-$ git clone https://github.com/mrashkova/Furniture-store
-$ cd furniture-store/client
-```
-
-2. Install other packages:
-
-- For MacOS:
-
-```sh
-$ npm i
-```
-
-- For Windows:
-
-```sh
-C:\Users\Name\furniture-store\client> npm i
-```
-
-3. Run Server
-
-```sh
-$ npm run dev
-```
-
-Expected result:
-
-```
-Compiled successfully!
-
-You can now view client in the browser.
-
-  Local:            http://localhost:5173/
-
-Note that the development build is not optimized.
-To create a production build, use npm run build.
-
-webpack compiled successfully
-```
-
-4. Create a Firebase project and configure it with your Firebase credentials. See [Firebase documentation](https://firebase.google.com/docs/web/setup) for more information.
-
-And navigate to furniture-store homepage using `http://localhost:5173/`.
-
-#### Other syntaxes
-
-To kill/stop the server
-
-> Ctrl + c
-
-<!-- Structure -->
-
-## Structure
-
-```
-
-```
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-See the [open issues](https://github.com/mrashkova/Furniture-store/issues) for a list of proposed features (and known issues).
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
+furniture-store/
+|-- client/
+| |-- src/
+| |-- components/
+| |-- aboutUs/
+| |-- AboutUs.jsx
+| |-- AboutUs.module.css
+| |-- catalogue/
+| |-- productItem/
+| |-- ProductDetails.jsx
+| |-- ProductDetails.module.css
+| |-- ProductItem.jsx
+| |-- ProductItem.module.css
+| |-- Catalogue.jsx
+| |-- Catalogue.module.css
+| |-- create/
+| |-- Create.jsx
+| |-- Create.module.css
+| |-- edit/
+| |-- Edit.jsx
+| |-- Edit.module.css
+| |-- footer/
+| |-- Footer.jsx
+| |-- Footer.module.css
+| |-- guards/
+| |-- AuthGuard.jsx
+| |-- AuthGuardLoggedIn.jsx
+| |-- header/
+| |-- Header.jsx
+| |-- Header.module.css
+| |-- home/
+| |-- Carousel/
+| |-- HomeCarousel.jsx
+| |-- HomeCarousel.module.css
+| |-- Home.jsx
+| |-- Home.module.css
+| |-- login/
+| |-- Login.jsx
+| |-- Login.module.css
+| |-- logout/
+| |-- Logout.jsx
+| |-- myPuchases/
+| |-- Mypurchases.jsx
+| |-- Mypurchases.module.css
+| |-- notFound/
+| |-- NotFound.jsx
+| |-- NotFound.module.css
+| |-- register/
+| |-- Register.jsx
+| |-- Register.module.css
+| |-- constants/
+| |-- paths.js
+| |-- contexts/
+| |-- authContext.jsx
+| |-- hooks/
+| |-- useForm.js
+| |-- usePersistedState.js
+| |-- lib/
+| |-- request.js
+| |-- services/
+| |-- authServices.js
+| |-- furnitureService.js
+| |-- utils/
+| |-- pathUtils.js
+| |-- App.jsx
+| |-- main.jsx
+| |-- .eslintrc.cjs
+| |-- .gitignore
+| |-- .eslintrc.cjs
+| |-- index.html
+| |-- package-lock.json
+| |-- package.json
+| |-- vite.config.js
+|-- server/
+|-- package-lock.json
+|-- README.md
 
 ## Contact
 
 Mariya Rashkova - mrashkkova@gmail.com
 
-Project Link: [https://github.com/mrashkova/Furniture-store](https://github.com/mrashkova/Furniture-store)
+Project Link: [https://github.com/mrashkova/Simple-Todo-List](https://github.com/mrashkova/Simple-Todo-List)
