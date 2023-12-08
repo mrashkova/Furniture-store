@@ -66,3 +66,19 @@ input[type="submit"]:hover {
 .link {
   color: black;
 }
+
+.errorMessage {
+  color: #c25451;
+  margin-top: 10px;
+  font-size: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

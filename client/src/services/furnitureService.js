@@ -138,9 +138,7 @@ const genericValidator = (value, condition, errorMessage, setErrors) => {
       [errorMessage.field]: errorMessage.message,
     }));
   } else {
-    if (setErrors && setErrors[errorMessage.field]) {
-      setErrors((state) => ({ ...state, [errorMessage.field]: "" }));
-    }
+    setErrors((state) => ({ ...state, [errorMessage.field]: "" }));
   }
 };
 

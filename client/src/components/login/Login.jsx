@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Login.module.css";
@@ -14,10 +14,31 @@ const loginFormKeys = {
 
 const Login = () => {
   const { loginSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(loginSubmitHandler, {
-    [loginFormKeys.email]: "",
-    [loginFormKeys.password]: "",
-  });
+  const [error, setError] = useState("");
+  const { values, onChange, onSubmit } = useForm(
+    async () => {
+      try {
+        setError(""); // Clear previous errors
+        await loginSubmitHandler(values);
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
+          setError(error.response.data.message);
+        } else if (error.message) {
+          setError(error.message); // Use the actual error message
+        } else {
+          setError("An error occurred during login.");
+        }
+      }
+    },
+    {
+      [loginFormKeys.email]: "",
+      [loginFormKeys.password]: "",
+    }
+  );
 
   return (
     <section id="login-page" className="auth">
@@ -43,6 +64,7 @@ const Login = () => {
             onChange={onChange}
             value={values[loginFormKeys.password]}
           />
+          {error && <p className={styles.errorMessage}>{error}</p>}
 
           <div className={styles.float}>
             <div className={styles.floatLeft}>

@@ -9,6 +9,8 @@
   width: 50%;
   box-sizing: border-box;
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 80px;
   align-items: center;
 }
 
@@ -48,7 +50,7 @@ textarea[type="text"] {
   background-color: #c25451;
 }
 
-.reset:hover {
+button[type="button"]:hover {
   background-color: #521c00;
 }
 
@@ -58,11 +60,28 @@ textarea[type="text"] {
 }
 
 .errorMessage {
-  color: red;
+  color: #c25451;
   font-size: 0.8em;
   margin: 10px 0;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .inputError {
-  border: 1px solid red;
+  border: 1px solid #c25451;
+}
+
+.errorFilled {
+  color: #c25451;
+  margin-top: 10px;
+  font-size: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -23,6 +23,7 @@ const CreateProduct = ({ createRef }) => {
   const { userId } = useContext(AuthContext);
   const [createValues, setCreateValues] = useState(createInitialState);
   const [errors, setErrors] = useState({});
+  const [missingFields, setMissingFields] = useState([]);
 
   useEffect(() => {
     articleInputRef.current.focus();
@@ -73,15 +74,34 @@ const CreateProduct = ({ createRef }) => {
   const createProductHandler = async (e) => {
     e.preventDefault();
 
+    // Check if any field is empty
+    const emptyFields = Object.entries(createValues).filter(
+      ([fieldName, value]) => !value && fieldName !== "imageUrl"
+    );
+
+    if (emptyFields.length > 0) {
+      const emptyFieldNames = emptyFields.map(([fieldName]) => {
+        return fieldName === "articleNumber" ? "Article Number" : fieldName;
+      });
+      setMissingFields(emptyFieldNames);
+      return;
+    }
+
+    // Clear missing fields when the form is valid
+    setMissingFields([]);
+
+    // Validate each input
     Object.entries(createValues).forEach(([fieldName, value]) => {
       validateInput(fieldName, value);
     });
 
+    // Check for validation errors
     if (Object.values(errors).some((x) => x)) {
       console.log("Form has errors. Cannot submit.");
       return;
     }
 
+    // Rest of your code for submitting the form
     const productData = {
       ...createValues,
       measurements: {
@@ -109,15 +129,15 @@ const CreateProduct = ({ createRef }) => {
       <form ref={createRef} id="create" onSubmit={createProductHandler}>
         <div className={styles.container}>
           <h3>Product Information</h3>
+
           <label htmlFor="name">Article Number: </label>
           <input
             ref={articleInputRef}
-            type="number"
+            type="text"
             id="articleNumber"
             name="articleNumber"
             value={createValues.articleNumber}
             onChange={createChangeHandler}
-            onBlur={() => console.log("onBlur")}
           />
           <label htmlFor="name">Name: </label>
           <input
@@ -126,7 +146,6 @@ const CreateProduct = ({ createRef }) => {
             name="name"
             value={createValues.name}
             onChange={createChangeHandler}
-            onBlur={() => console.log("onBlur")}
           />
 
           <label htmlFor="category">Category: </label>
@@ -245,6 +264,9 @@ const CreateProduct = ({ createRef }) => {
               )}
             </div>
           </div>
+          {missingFields.length > 0 && (
+            <p className={styles.errorFilled}>Please fill all input fields!</p>
+          )}
 
           <button
             className={styles.add}

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Register.module.css";
@@ -14,11 +14,32 @@ const RegisterFormKeys = {
 
 export default function Register() {
   const { registerSubmitHandler } = useContext(AuthContext);
-  const { values, onChange, onSubmit } = useForm(registerSubmitHandler, {
-    [RegisterFormKeys.Email]: "",
-    [RegisterFormKeys.Password]: "",
-    [RegisterFormKeys.ConfirmPassword]: "",
-  });
+  const [error, setError] = useState("");
+  const { values, onChange, onSubmit } = useForm(
+    async () => {
+      try {
+        setError(""); // Clear previous errors
+        await registerSubmitHandler(values);
+      } catch (error) {
+        if (
+          error.response &&
+          error.response.data &&
+          error.response.data.message
+        ) {
+          setError(error.response.data.message);
+        } else if (error.message) {
+          setError(error.message); // Use the actual error message
+        } else {
+          setError("An error occurred during login.");
+        }
+      }
+    },
+    {
+      [RegisterFormKeys.Email]: "",
+      [RegisterFormKeys.Password]: "",
+      [RegisterFormKeys.ConfirmPassword]: "",
+    }
+  );
 
   return (
     <section id="register-page" className="content auth">
@@ -32,7 +53,7 @@ export default function Register() {
             type="email"
             id="email"
             name="email"
-            placeholder="maria@email.com"
+            placeholder="mariya@email.com"
             onChange={onChange}
             values={values[RegisterFormKeys.Email]}
           />
@@ -54,6 +75,8 @@ export default function Register() {
             onChange={onChange}
             values={values[RegisterFormKeys.ConfirmPassword]}
           />
+
+          {error && <p className={styles.errorMessage}>{error}</p>}
 
           <div className={styles.float}>
             <div className={styles.floatLeft}>
