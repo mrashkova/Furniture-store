@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { AuthProvider } from "./contexts/authContext";
 import Path from "./constants/paths";
+import AuthGuardLoggedIn from "./components/guards/AuthGuardLoggedIn";
 import AuthGuard from "./components/guards/AuthGuard";
 
 import Header from "./components/header/Header";
@@ -29,16 +30,20 @@ function App() {
         <Route path={Path.Catalogue} element={<Catalogue />} />
         <Route path={Path.ProductDetails} element={<ProductDetails />} />
         <Route path={Path.AboutUs} element={<AboutUs />} />
-        <Route path={Path.MyPurchases} element={<MyPurchases />} />
-        <Route path={Path.Login} element={<Login />} />
-        <Route path={Path.Register} element={<Register />} />
-        <Route path={Path.Logout} element={<Logout />} />
 
-        {/* Apply AuthGuard selectively to routes that require authentication */}
         <Route element={<AuthGuard />}>
           <Route path={Path.Create} element={<Create />} />
-          <Route path={Path.Edit} element={<Edit />} />
+          <Route path={Path.MyPurchases} element={<MyPurchases />} />
         </Route>
+
+        <Route path={Path.Edit} element={<Edit />} />
+
+        <Route element={<AuthGuardLoggedIn />}>
+          <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.Register} element={<Register />} />
+        </Route>
+
+        <Route path={Path.Logout} element={<Logout />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
