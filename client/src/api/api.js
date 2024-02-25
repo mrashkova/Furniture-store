@@ -29,10 +29,10 @@ function getOptions(method = "get", body) {
     headers: {},
   };
 
-  //   const token = sessionStorage.getItem("authToken");
-  //   if (token != null) {
-  //     options.headers["X-Authorization"] = token;
-  //   }
+  const token = sessionStorage.getItem("authToken");
+  if (token != null) {
+    options.headers["X-Authorization"] = token;
+  }
 
   if (body) {
     options.headers["Content-Type"] = "application/json";
@@ -54,8 +54,42 @@ export async function put(url, data) {
   return await request(url, getOptions("put", data));
 }
 
-export async function del(url, data) {
+export async function del(url) {
   return await request(url, getOptions("delete"));
 }
 
-// test
+export async function login(email, password) {
+  const result = await post(settings.host + "/users/login", {
+    email,
+    password,
+  });
+
+  sessionStorage.setItem("email", result.email);
+  sessionStorage.setItem("authToken", result.accessToken);
+  sessionStorage.setItem("userId", result._id);
+
+  return result;
+}
+
+export async function register(email, password) {
+  const result = await post(settings.host + "/users/register", {
+    email,
+    password,
+  });
+
+  sessionStorage.setItem("email", result.email);
+  sessionStorage.setItem("authToken", result.accessToken);
+  sessionStorage.setItem("userId", result._id);
+
+  return result;
+}
+
+export async function logout() {
+  const result = await get(settings.host + "/users/logout");
+
+  sessionStorage.removeItem("email");
+  sessionStorage.removeItem("authToken");
+  sessionStorage.removeItem("userId");
+
+  return result;
+}
